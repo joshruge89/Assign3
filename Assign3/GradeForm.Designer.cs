@@ -1,6 +1,6 @@
 ﻿namespace Assign3
 {
-    partial class Form1
+    partial class GradeForm
     {
         /// <summary>
         /// Required designer variable.

@@ -1,0 +1,10 @@
+/Users/tymac/Desktop/lab/Assign3/Assign3/bin/Debug/Assign3.exe.config
+/Users/tymac/Desktop/lab/Assign3/Assign3/bin/Debug/Assign3.exe
+/Users/tymac/Desktop/lab/Assign3/Assign3/bin/Debug/Assign3.pdb
+/Users/tymac/Desktop/lab/Assign3/Assign3/obj/Debug/Assign3.csprojResolveAssemblyReference.cache
+/Users/tymac/Desktop/lab/Assign3/Assign3/obj/Debug/Assign3.Form1.resources
+/Users/tymac/Desktop/lab/Assign3/Assign3/obj/Debug/Assign3.Properties.Resources.resources
+/Users/tymac/Desktop/lab/Assign3/Assign3/obj/Debug/Assign3.csproj.GenerateResource.cache
+/Users/tymac/Desktop/lab/Assign3/Assign3/obj/Debug/Assign3.csproj.CoreCompileInputs.cache
+/Users/tymac/Desktop/lab/Assign3/Assign3/obj/Debug/Assign3.exe
+/Users/tymac/Desktop/lab/Assign3/Assign3/obj/Debug/Assign3.pdb
