@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormModel.cs" />
+    <Compile Include="FormController.cs" />
     <Compile Include="Course.cs" />
     <Compile Include="GradeForm.cs">
       <SubType>Form</SubType>

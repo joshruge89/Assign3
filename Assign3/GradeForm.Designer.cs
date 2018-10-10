@@ -52,9 +52,9 @@
             this.CourseBox2 = new System.Windows.Forms.TextBox();
             this.GradeComboBox2 = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.LessButton2 = new System.Windows.Forms.RadioButton();
             this.GreaterButton2 = new System.Windows.Forms.RadioButton();
+            this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -74,10 +74,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.PercentageBox)).BeginInit();
             this.SuspendLayout();
             // 
+            // CourseComboBox
+            // 
+            CourseComboBox.FormattingEnabled = true;
+            CourseComboBox.Location = new System.Drawing.Point(645, 384);
+            CourseComboBox.Margin = new System.Windows.Forms.Padding(7);
+            CourseComboBox.Name = "CourseComboBox";
+            CourseComboBox.Size = new System.Drawing.Size(207, 37);
+            CourseComboBox.TabIndex = 18;
+            // 
             // ZidBox
             // 
             this.ZidBox.Location = new System.Drawing.Point(142, 129);
-            this.ZidBox.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.ZidBox.Margin = new System.Windows.Forms.Padding(7);
             this.ZidBox.Name = "ZidBox";
             this.ZidBox.Size = new System.Drawing.Size(228, 35);
             this.ZidBox.TabIndex = 14;
@@ -88,9 +97,9 @@
             this.groupBox1.Controls.Add(this.GreaterButton1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(35, 216);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(7);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(7);
             this.groupBox1.Size = new System.Drawing.Size(467, 223);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
@@ -99,7 +108,7 @@
             // 
             this.LessButton1.AutoSize = true;
             this.LessButton1.Location = new System.Drawing.Point(40, 62);
-            this.LessButton1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.LessButton1.Margin = new System.Windows.Forms.Padding(7);
             this.LessButton1.Name = "LessButton1";
             this.LessButton1.Size = new System.Drawing.Size(291, 33);
             this.LessButton1.TabIndex = 5;
@@ -111,7 +120,7 @@
             // 
             this.GreaterButton1.AutoSize = true;
             this.GreaterButton1.Location = new System.Drawing.Point(40, 132);
-            this.GreaterButton1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.GreaterButton1.Margin = new System.Windows.Forms.Padding(7);
             this.GreaterButton1.Name = "GreaterButton1";
             this.GreaterButton1.Size = new System.Drawing.Size(321, 33);
             this.GreaterButton1.TabIndex = 6;
@@ -122,7 +131,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(611, 348);
+            this.label5.Location = new System.Drawing.Point(640, 348);
             this.label5.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 29);
@@ -163,7 +172,7 @@
             // ResultsButton2
             // 
             this.ResultsButton2.Location = new System.Drawing.Point(866, 376);
-            this.ResultsButton2.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.ResultsButton2.Margin = new System.Windows.Forms.Padding(7);
             this.ResultsButton2.Name = "ResultsButton2";
             this.ResultsButton2.Size = new System.Drawing.Size(201, 51);
             this.ResultsButton2.TabIndex = 16;
@@ -174,19 +183,10 @@
             // 
             this.GradeComboBox1.FormattingEnabled = true;
             this.GradeComboBox1.Location = new System.Drawing.Point(516, 384);
-            this.GradeComboBox1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.GradeComboBox1.Margin = new System.Windows.Forms.Padding(7);
             this.GradeComboBox1.Name = "GradeComboBox1";
-            this.GradeComboBox1.Size = new System.Drawing.Size(76, 37);
+            this.GradeComboBox1.Size = new System.Drawing.Size(96, 37);
             this.GradeComboBox1.TabIndex = 17;
-            // 
-            // CourseComboBox
-            // 
-            CourseComboBox.FormattingEnabled = true;
-            CourseComboBox.Location = new System.Drawing.Point(618, 384);
-            CourseComboBox.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            CourseComboBox.Name = "CourseComboBox";
-            CourseComboBox.Size = new System.Drawing.Size(207, 37);
-            CourseComboBox.TabIndex = 18;
             // 
             // label3
             // 
@@ -203,7 +203,7 @@
             // 
             this.MajorComboBox.FormattingEnabled = true;
             this.MajorComboBox.Location = new System.Drawing.Point(35, 571);
-            this.MajorComboBox.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.MajorComboBox.Margin = new System.Windows.Forms.Padding(7);
             this.MajorComboBox.Name = "MajorComboBox";
             this.MajorComboBox.Size = new System.Drawing.Size(272, 37);
             this.MajorComboBox.TabIndex = 22;
@@ -231,7 +231,7 @@
             // CourseBox1
             // 
             this.CourseBox1.Location = new System.Drawing.Point(516, 567);
-            this.CourseBox1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.CourseBox1.Margin = new System.Windows.Forms.Padding(7);
             this.CourseBox1.Name = "CourseBox1";
             this.CourseBox1.Size = new System.Drawing.Size(331, 35);
             this.CourseBox1.TabIndex = 24;
@@ -239,7 +239,7 @@
             // ResultsButton1
             // 
             this.ResultsButton1.Location = new System.Drawing.Point(866, 125);
-            this.ResultsButton1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.ResultsButton1.Margin = new System.Windows.Forms.Padding(7);
             this.ResultsButton1.Name = "ResultsButton1";
             this.ResultsButton1.Size = new System.Drawing.Size(201, 51);
             this.ResultsButton1.TabIndex = 25;
@@ -249,7 +249,7 @@
             // ResultsButton3
             // 
             this.ResultsButton3.Location = new System.Drawing.Point(866, 567);
-            this.ResultsButton3.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.ResultsButton3.Margin = new System.Windows.Forms.Padding(7);
             this.ResultsButton3.Name = "ResultsButton3";
             this.ResultsButton3.Size = new System.Drawing.Size(201, 51);
             this.ResultsButton3.TabIndex = 26;
@@ -280,7 +280,7 @@
             // ResultsButton4
             // 
             this.ResultsButton4.Location = new System.Drawing.Point(866, 716);
-            this.ResultsButton4.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.ResultsButton4.Margin = new System.Windows.Forms.Padding(7);
             this.ResultsButton4.Name = "ResultsButton4";
             this.ResultsButton4.Size = new System.Drawing.Size(201, 51);
             this.ResultsButton4.TabIndex = 30;
@@ -290,7 +290,7 @@
             // CourseBox2
             // 
             this.CourseBox2.Location = new System.Drawing.Point(135, 723);
-            this.CourseBox2.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.CourseBox2.Margin = new System.Windows.Forms.Padding(7);
             this.CourseBox2.Name = "CourseBox2";
             this.CourseBox2.Size = new System.Drawing.Size(331, 35);
             this.CourseBox2.TabIndex = 29;
@@ -299,9 +299,9 @@
             // 
             this.GradeComboBox2.FormattingEnabled = true;
             this.GradeComboBox2.Location = new System.Drawing.Point(511, 1185);
-            this.GradeComboBox2.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.GradeComboBox2.Margin = new System.Windows.Forms.Padding(7);
             this.GradeComboBox2.Name = "GradeComboBox2";
-            this.GradeComboBox2.Size = new System.Drawing.Size(76, 37);
+            this.GradeComboBox2.Size = new System.Drawing.Size(101, 37);
             this.GradeComboBox2.TabIndex = 33;
             // 
             // groupBox2
@@ -309,29 +309,18 @@
             this.groupBox2.Controls.Add(this.LessButton2);
             this.groupBox2.Controls.Add(this.GreaterButton2);
             this.groupBox2.Location = new System.Drawing.Point(30, 837);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(7);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(7);
             this.groupBox2.Size = new System.Drawing.Size(467, 223);
             this.groupBox2.TabIndex = 32;
             this.groupBox2.TabStop = false;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(30, 801);
-            this.label12.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(328, 29);
-            this.label12.TabIndex = 35;
-            this.label12.Text = "Fail Report for all courses";
             // 
             // LessButton2
             // 
             this.LessButton2.AutoSize = true;
             this.LessButton2.Location = new System.Drawing.Point(40, 62);
-            this.LessButton2.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.LessButton2.Margin = new System.Windows.Forms.Padding(7);
             this.LessButton2.Name = "LessButton2";
             this.LessButton2.Size = new System.Drawing.Size(278, 33);
             this.LessButton2.TabIndex = 5;
@@ -343,13 +332,24 @@
             // 
             this.GreaterButton2.AutoSize = true;
             this.GreaterButton2.Location = new System.Drawing.Point(40, 132);
-            this.GreaterButton2.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.GreaterButton2.Margin = new System.Windows.Forms.Padding(7);
             this.GreaterButton2.Name = "GreaterButton2";
             this.GreaterButton2.Size = new System.Drawing.Size(308, 33);
             this.GreaterButton2.TabIndex = 6;
             this.GreaterButton2.TabStop = true;
             this.GreaterButton2.Text = "Greater Than or Equal to";
             this.GreaterButton2.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(30, 801);
+            this.label12.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(328, 29);
+            this.label12.TabIndex = 35;
+            this.label12.Text = "Fail Report for all courses";
             // 
             // label10
             // 
@@ -376,7 +376,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(34, 1078);
+            this.label13.Location = new System.Drawing.Point(25, 1091);
             this.label13.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(344, 29);
@@ -387,11 +387,11 @@
             // 
             this.groupBox3.Controls.Add(this.LessButton3);
             this.groupBox3.Controls.Add(this.GreaterButton3);
-            this.groupBox3.Location = new System.Drawing.Point(35, 1102);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.groupBox3.Location = new System.Drawing.Point(28, 1127);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(7);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.groupBox3.Size = new System.Drawing.Size(467, 223);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(7);
+            this.groupBox3.Size = new System.Drawing.Size(467, 169);
             this.groupBox3.TabIndex = 37;
             this.groupBox3.TabStop = false;
             // 
@@ -399,7 +399,7 @@
             // 
             this.LessButton3.AutoSize = true;
             this.LessButton3.Location = new System.Drawing.Point(35, 42);
-            this.LessButton3.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.LessButton3.Margin = new System.Windows.Forms.Padding(7);
             this.LessButton3.Name = "LessButton3";
             this.LessButton3.Size = new System.Drawing.Size(278, 33);
             this.LessButton3.TabIndex = 5;
@@ -411,7 +411,7 @@
             // 
             this.GreaterButton3.AutoSize = true;
             this.GreaterButton3.Location = new System.Drawing.Point(35, 100);
-            this.GreaterButton3.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.GreaterButton3.Margin = new System.Windows.Forms.Padding(7);
             this.GreaterButton3.Name = "GreaterButton3";
             this.GreaterButton3.Size = new System.Drawing.Size(308, 33);
             this.GreaterButton3.TabIndex = 6;
@@ -422,7 +422,7 @@
             // ResultsButton6
             // 
             this.ResultsButton6.Location = new System.Drawing.Point(866, 1180);
-            this.ResultsButton6.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.ResultsButton6.Margin = new System.Windows.Forms.Padding(7);
             this.ResultsButton6.Name = "ResultsButton6";
             this.ResultsButton6.Size = new System.Drawing.Size(201, 51);
             this.ResultsButton6.TabIndex = 38;
@@ -432,7 +432,7 @@
             // ResultsButton5
             // 
             this.ResultsButton5.Location = new System.Drawing.Point(866, 955);
-            this.ResultsButton5.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.ResultsButton5.Margin = new System.Windows.Forms.Padding(7);
             this.ResultsButton5.Name = "ResultsButton5";
             this.ResultsButton5.Size = new System.Drawing.Size(201, 51);
             this.ResultsButton5.TabIndex = 39;
@@ -442,7 +442,7 @@
             // PercentageBox
             // 
             this.PercentageBox.Location = new System.Drawing.Point(516, 968);
-            this.PercentageBox.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.PercentageBox.Margin = new System.Windows.Forms.Padding(7);
             this.PercentageBox.Name = "PercentageBox";
             this.PercentageBox.Size = new System.Drawing.Size(91, 35);
             this.PercentageBox.TabIndex = 40;
@@ -460,7 +460,7 @@
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(1150, 118);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(7);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(863, 1113);
             this.richTextBox1.TabIndex = 42;
@@ -515,9 +515,9 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.Margin = new System.Windows.Forms.Padding(7);
             this.Name = "GradeForm";
-            this.Text = "Form1";
+            this.Text = "NIU Academic Performance Query System";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

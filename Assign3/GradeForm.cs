@@ -28,6 +28,7 @@ namespace Assign3
         {
             InitializeComponent();
             PositionAndSizeFrame();
+            PopulateGradeComboBoxes();
         }
 
         // Center and Size Frame
@@ -40,5 +41,20 @@ namespace Assign3
             CenterToScreen();
         }
 
+
+        private void PopulateGradeComboBoxes()
+        {
+            GradeComboBox1.Items.Clear();
+            GradeComboBox2.Items.Clear();
+
+            GradeComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            GradeComboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            foreach (string grade in FormModel.gradePool)
+            {
+                GradeComboBox1.Items.Add(grade);
+                GradeComboBox2.Items.Add(grade);
+            }
+        }
     }
 }
