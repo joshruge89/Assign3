@@ -18,3 +18,13 @@ C:\Users\Tyler\Desktop\lab\Assign3\Assign3\obj\Debug\Assign3.csproj.GenerateReso
 C:\Users\Tyler\Desktop\lab\Assign3\Assign3\obj\Debug\Assign3.csproj.CoreCompileInputs.cache
 C:\Users\Tyler\Desktop\lab\Assign3\Assign3\obj\Debug\Assign3.exe
 C:\Users\Tyler\Desktop\lab\Assign3\Assign3\obj\Debug\Assign3.pdb
+C:\Users\Josh\Desktop\Assign3\Assign3\bin\Debug\Assign3.exe.config
+C:\Users\Josh\Desktop\Assign3\Assign3\bin\Debug\Assign3.exe
+C:\Users\Josh\Desktop\Assign3\Assign3\bin\Debug\Assign3.pdb
+C:\Users\Josh\Desktop\Assign3\Assign3\obj\Debug\Assign3.csprojAssemblyReference.cache
+C:\Users\Josh\Desktop\Assign3\Assign3\obj\Debug\Assign3.GradeForm.resources
+C:\Users\Josh\Desktop\Assign3\Assign3\obj\Debug\Assign3.Properties.Resources.resources
+C:\Users\Josh\Desktop\Assign3\Assign3\obj\Debug\Assign3.csproj.GenerateResource.cache
+C:\Users\Josh\Desktop\Assign3\Assign3\obj\Debug\Assign3.csproj.CoreCompileInputs.cache
+C:\Users\Josh\Desktop\Assign3\Assign3\obj\Debug\Assign3.exe
+C:\Users\Josh\Desktop\Assign3\Assign3\obj\Debug\Assign3.pdb
