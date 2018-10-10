@@ -27,6 +27,17 @@ namespace Assign3
         public GradeForm()
         {
             InitializeComponent();
+            PositionAndSizeFrame();
+        }
+
+        // Center and Size Frame
+        private void PositionAndSizeFrame()
+        {
+            int h = Screen.PrimaryScreen.WorkingArea.Height - 200;
+            int w = (Screen.PrimaryScreen.WorkingArea.Width / 2) + 100;
+            Size = new Size(w, h);
+
+            CenterToScreen();
         }
 
     }
