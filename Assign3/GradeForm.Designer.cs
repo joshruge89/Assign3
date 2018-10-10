@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ComboBox CourseComboBox;
             this.ZidBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.LessButton1 = new System.Windows.Forms.RadioButton();
@@ -67,21 +66,12 @@
             this.label14 = new System.Windows.Forms.Label();
             this.MainOutputBox = new System.Windows.Forms.RichTextBox();
             this.label15 = new System.Windows.Forms.Label();
-            CourseComboBox = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PercentageBox)).BeginInit();
             this.SuspendLayout();
-            // 
-            // CourseComboBox
-            // 
-            CourseComboBox.FormattingEnabled = true;
-            CourseComboBox.Location = new System.Drawing.Point(278, 172);
-            CourseComboBox.Name = "CourseComboBox";
-            CourseComboBox.Size = new System.Drawing.Size(87, 21);
-            CourseComboBox.TabIndex = 18;
-            CourseComboBox.SelectedIndexChanged += new System.EventHandler(this.CourseComboBox_SelectedIndexChanged);
             // 
             // ZidBox
             // 
@@ -126,7 +116,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(275, 156);
+            this.label5.Location = new System.Drawing.Point(296, 153);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 12;
@@ -135,7 +125,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(220, 156);
+            this.label4.Location = new System.Drawing.Point(224, 153);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 11;
@@ -173,7 +163,7 @@
             // GradeComboBox1
             // 
             this.GradeComboBox1.FormattingEnabled = true;
-            this.GradeComboBox1.Location = new System.Drawing.Point(221, 172);
+            this.GradeComboBox1.Location = new System.Drawing.Point(214, 168);
             this.GradeComboBox1.Name = "GradeComboBox1";
             this.GradeComboBox1.Size = new System.Drawing.Size(58, 21);
             this.GradeComboBox1.TabIndex = 17;
@@ -442,11 +432,19 @@
             this.label15.TabIndex = 43;
             this.label15.Text = "Query Results";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(278, 169);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(94, 20);
+            this.textBox1.TabIndex = 44;
+            // 
             // GradeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(946, 595);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.MainOutputBox);
@@ -471,7 +469,6 @@
             this.Controls.Add(this.MajorComboBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
-            this.Controls.Add(CourseComboBox);
             this.Controls.Add(this.GradeComboBox1);
             this.Controls.Add(this.ResultsButton2);
             this.Controls.Add(this.ZidBox);
@@ -534,6 +531,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.RichTextBox MainOutputBox;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

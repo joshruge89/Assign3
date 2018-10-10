@@ -44,8 +44,10 @@ namespace Assign3
 
             BuildStudentPool();
             BuildCoursePool();
+            BuildMajorPool();
 
             PopulateGradeComboBox();
+            PopulateMajorComboBox(); 
         }
 
         // Center and Size Frame
@@ -230,14 +232,17 @@ namespace Assign3
 
         }//end PopulateGradeComboBox
 
-        private void PopulateCourseComboBox()
-        {
-            
-        }
 
-        private void CourseComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void PopulateMajorComboBox()
         {
+            MajorComboBox.Items.Clear(); 
 
-        }
+            foreach (string s in majorPool)
+            {
+                MajorComboBox.Items.Add(s); 
+            }
+
+        }//PopulateMajorComboBox End
+
     }
 }
