@@ -77,10 +77,11 @@
             // CourseComboBox
             // 
             CourseComboBox.FormattingEnabled = true;
-            CourseComboBox.Location = new System.Drawing.Point(265, 172);
+            CourseComboBox.Location = new System.Drawing.Point(278, 172);
             CourseComboBox.Name = "CourseComboBox";
-            CourseComboBox.Size = new System.Drawing.Size(91, 21);
+            CourseComboBox.Size = new System.Drawing.Size(87, 21);
             CourseComboBox.TabIndex = 18;
+            CourseComboBox.SelectedIndexChanged += new System.EventHandler(this.CourseComboBox_SelectedIndexChanged);
             // 
             // ZidBox
             // 
@@ -125,7 +126,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(262, 156);
+            this.label5.Location = new System.Drawing.Point(275, 156);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 12;
@@ -174,7 +175,7 @@
             this.GradeComboBox1.FormattingEnabled = true;
             this.GradeComboBox1.Location = new System.Drawing.Point(221, 172);
             this.GradeComboBox1.Name = "GradeComboBox1";
-            this.GradeComboBox1.Size = new System.Drawing.Size(35, 21);
+            this.GradeComboBox1.Size = new System.Drawing.Size(58, 21);
             this.GradeComboBox1.TabIndex = 17;
             // 
             // label3
@@ -281,7 +282,7 @@
             this.GradeComboBox2.FormattingEnabled = true;
             this.GradeComboBox2.Location = new System.Drawing.Point(219, 531);
             this.GradeComboBox2.Name = "GradeComboBox2";
-            this.GradeComboBox2.Size = new System.Drawing.Size(35, 21);
+            this.GradeComboBox2.Size = new System.Drawing.Size(60, 21);
             this.GradeComboBox2.TabIndex = 33;
             // 
             // groupBox2
