@@ -29,7 +29,8 @@ namespace Assign3
         public static void BuildMajorPool()
         {
             String buffer,
-            filepath = "..\\..\\colleges.txt";
+                filepath = "..\\..\\colleges.txt";
+
 
             // Open students.txt file
             using (StreamReader inFile = new StreamReader(filepath))
@@ -297,12 +298,75 @@ namespace Assign3
         * Return Type: void
         * Use Case: 
         ******************************************************/
-
         private void ResultsButton5_Click(object sender, EventArgs e)
         {
             MainOutputBox.Clear();
-            MainOutputBox.Text = "Button 5";
-        }
+            StringBuilder failOutput = new StringBuilder();
+            bool radioSelected = true;
+
+            if (!LessButton2.Checked && !GreaterButton2.Checked) {
+                failOutput.AppendLine("Error! Please Select Less Than or Greater Than.");
+                radioSelected = false;
+            }
+
+
+            if (radioSelected) {
+                bool matchNotFound = true;
+
+                failOutput.AppendLine("Fail Percentage Report for Classes.");
+                failOutput.AppendLine("-------------------------------------");
+
+
+                foreach (Course c in coursePool)
+                {
+                    double numEnrolled =
+                      (from grade in gradePool
+                       where (grade.Dept == c.DeptCode) && (grade.Course == c.CourseNum.ToString())
+                       select grade).Count();
+
+                    int numFailed =
+                         (from grade in gradePool
+                          where (grade.Dept == c.DeptCode) && (grade.Course == c.CourseNum.ToString()) &&
+                          (grade.LetterGrade == "F")
+                          select grade).Count();
+
+                    double failPercentage = (numFailed / numEnrolled) * 100;
+                    double percentageFilter = Convert.ToDouble(PercentageBox.Value);
+
+                    if (LessButton2.Checked && failPercentage <= percentageFilter)
+                    {                        
+                        failOutput.Append("Out of " + numEnrolled + " in ");
+                        failOutput.Append(c.DeptCode + "-" + c.CourseNum + ", ");
+                        failOutput.Append(numFailed + " failed (");
+                        failOutput.Append(String.Format("{0:0.00}", failPercentage));
+                        failOutput.AppendLine("%)\n");
+
+                        matchNotFound = false;
+                    }
+                    else if (GreaterButton2.Checked && failPercentage >= percentageFilter)
+                    {
+                        failOutput.Append("Out of " + numEnrolled + " in ");
+                        failOutput.Append(c.DeptCode + "-" + c.CourseNum + ", ");
+                        failOutput.Append(numFailed + " failed (");
+                        failOutput.Append(String.Format("{0:0.00}", failPercentage));
+                        failOutput.AppendLine("%)\n");
+
+                        matchNotFound = false;
+                    }
+                }
+
+                if (matchNotFound)
+                {
+                    failOutput.AppendLine("No matches were found beyond this threshold.");
+                }
+
+                failOutput.Append("\n\n### END RESULTS ###");
+               
+            } // end if radioSelected
+
+            MainOutputBox.Text = failOutput.ToString();
+
+        } // End GradeForm.ResultsButton5_Click method
 
         /*******************************************************
         * Button 6 click
@@ -329,7 +393,7 @@ namespace Assign3
                 bothSelected = false;
             }
  
-            if (bothSelected == true)
+            if (bothSelected)
             {
                 string selectedGrade = GradeComboBox2.SelectedItem.ToString();
 
@@ -357,7 +421,7 @@ namespace Assign3
                         passOutput.Append(" enrolled in " + c.DeptCode + "-" + c.CourseNum + ", ");
                         passOutput.Append(numPassed + " passed at or below this threshold (");
                         passOutput.Append(String.Format("{0:0.00%}", passPercentage));
-                        passOutput.AppendLine("%)");
+                        passOutput.AppendLine("%\n");
                     } else
                     {
 
@@ -374,13 +438,17 @@ namespace Assign3
                         passOutput.Append(" enrolled in " + c.DeptCode + "-" + c.CourseNum + ", ");
                         passOutput.Append(numPassed + " passed at or above this threshold (");
                         passOutput.Append(String.Format("{0:0.00%}", passPercentage));
-                        passOutput.AppendLine("%)");
-                    }
+                        passOutput.AppendLine("%)\n");
+                    } // end else greater than
 
-                }
-            }
+                } // end foreach course
+
+                passOutput.Append("\n\n### END RESULTS ###");
+            } // end if bothSelected
 
             MainOutputBox.Text = passOutput.ToString();
-         }
-    }
-}
+
+        } // End GradeForm.ResultsButton6_Click method
+
+    } // end GradeForm class
+} // end Assign3 namespace
