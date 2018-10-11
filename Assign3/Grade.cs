@@ -16,25 +16,26 @@ namespace Assign3
 
         public string Zid
         {
-            get => zid;
-            set => value = zid;
+            get;// => zid;
+            set;// => value = zid;
         }
 
         public string Dept
         {
-            get => dept;
-            set => value = dept;
+            get;// => dept;
+            set;// => value = dept;
         }
 
         public string Course
         {
-            get => course;
-            set => value = course;
+            get;// => course;
+            set;// => value = course;
         }
 
-        public string LetterGrade {
-            get => letterGrade;
-            set => value = letterGrade;
+        public string LetterGrade
+        {
+            get;// => letterGrade;
+            set;// => value = letterGrade;
         }
  
         public Grade(string newZid, string newDept, string newCourse, string newGrade)
