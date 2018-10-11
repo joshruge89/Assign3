@@ -90,7 +90,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(7);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(7);
-            this.groupBox1.Size = new System.Drawing.Size(467, 146);
+            this.groupBox1.Size = new System.Drawing.Size(467, 166);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             // 
@@ -109,7 +109,7 @@
             // GreaterButton1
             // 
             this.GreaterButton1.AutoSize = true;
-            this.GreaterButton1.Location = new System.Drawing.Point(40, 81);
+            this.GreaterButton1.Location = new System.Drawing.Point(40, 95);
             this.GreaterButton1.Margin = new System.Windows.Forms.Padding(7);
             this.GreaterButton1.Name = "GreaterButton1";
             this.GreaterButton1.Size = new System.Drawing.Size(321, 33);
@@ -198,6 +198,7 @@
             this.MajorComboBox.Name = "MajorComboBox";
             this.MajorComboBox.Size = new System.Drawing.Size(272, 37);
             this.MajorComboBox.TabIndex = 22;
+            this.MajorComboBox.SelectedIndexChanged += new System.EventHandler(this.MajorComboBox_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -306,7 +307,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(7);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(7);
-            this.groupBox2.Size = new System.Drawing.Size(467, 155);
+            this.groupBox2.Size = new System.Drawing.Size(467, 173);
             this.groupBox2.TabIndex = 32;
             this.groupBox2.TabStop = false;
             // 
