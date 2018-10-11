@@ -58,6 +58,7 @@ namespace Assign3
             String buffer,
                 filepath = "..\\..\\grades.txt";
 
+
             // Open courses.txt file
             using (StreamReader inFile = new StreamReader(filepath))
             {
