@@ -37,7 +37,7 @@ namespace Assign3
             get;// => letterGrade;
             set;// => value = letterGrade;
         }
- 
+
         public Grade(string newZid, string newDept, string newCourse, string newGrade)
         {
             Zid = newZid;
@@ -89,6 +89,41 @@ namespace Assign3
             sb.Append(Dept + "-" + Course);
             sb.Append("   |   " + LetterGrade);
             return sb.ToString();
+        }
+
+        public static int findGradeWeight(string letterGrade)
+        {
+            switch (letterGrade) {
+                case "A+":
+                    return 12;
+                case "A":
+                    return 11;
+                case "A-":
+                    return 10;
+                case "B+":
+                    return 9;
+                case "B":
+                    return 8;
+                case "B-":
+                    return 7;
+                case "C++":
+                case "C+":
+                    return 6;
+                case "C":
+                    return 5;
+                case "C-":
+                    return 4;
+                case "D+":
+                    return 3;
+                case "D":
+                    return 2;
+                case "D-":
+                    return 1;
+                case "F":
+                default:
+                    return 0;
+
+            }
         }
     }
 }

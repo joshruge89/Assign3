@@ -19,4 +19,23 @@ namespace Assign3
             Application.Run(new GradeForm());
         }
     }
+
+    public static class StringExtensions
+    {
+        public static int CompareGrade(this string grade1, string grade2)
+        {
+          int weight1, weight2;
+
+          weight1 = Grade.findGradeWeight(grade1);
+          weight2 = Grade.findGradeWeight(grade2);
+
+          if (weight1 > weight2) {
+            return -1;
+          } else if (weight1 < weight2) {
+            return 1;
+          } else {
+            return 0;
+          }
+        }
+    }
 }
