@@ -2,6 +2,8 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using System.Linq;
+using System.Text;
 
 namespace Assign3
 {
@@ -12,6 +14,22 @@ namespace Assign3
         {
             MainOutputBox.Clear();
             MainOutputBox.Text = "Button 1";
+
+            var gradeMatches =
+                from grade in gradePool
+                where grade.Zid == ZidBox.Text
+                select grade;
+
+            filteredStudentPool.Clear();
+
+            StringBuilder sb = new StringBuilder();
+
+            foreach (Grade g in gradeMatches)
+            {
+                sb.AppendLine(g.BuildGradeListing());
+            }
+
+            MainOutputBox.Text = sb.ToString();
         }
 
         private void ResultsButton2_Click(object sender, EventArgs e)

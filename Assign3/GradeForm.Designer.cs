@@ -198,7 +198,6 @@
             this.MajorComboBox.Name = "MajorComboBox";
             this.MajorComboBox.Size = new System.Drawing.Size(272, 37);
             this.MajorComboBox.TabIndex = 22;
-            this.MajorComboBox.SelectedIndexChanged += new System.EventHandler(this.MajorComboBox_SelectedIndexChanged);
             // 
             // label6
             // 
