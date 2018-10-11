@@ -19,4 +19,25 @@ namespace Assign3
             Application.Run(new GradeForm());
         }
     }
+
+    public static class StringExtensions
+    {
+        public static int CompareGrade(this string grade1, string grade2)
+        {
+
+            if (grade1[0] < grade2[0]) return -1;
+            if (grade1[0] > grade2[0]) return 1;
+
+            if (grade1.Length > grade2.Length && grade1[1] == '+') return -1;
+            if (grade1.Length > grade2.Length && grade1[1] == '-') return 1;
+
+            if (grade1.Length < grade2.Length && grade2[1] == '+') return 1;
+            if (grade1.Length < grade2.Length && grade2[1] == '-') return -1;
+
+            if (grade1.Length > 1 && grade1[1] == '+' && grade2[1] != '+') return -1;
+
+            return grade1.CompareTo(grade2);
+           
+        }
+    }
 }

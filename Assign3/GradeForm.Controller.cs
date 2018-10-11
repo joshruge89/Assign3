@@ -219,7 +219,7 @@ namespace Assign3
                         int numPassed =
                             (from grade in gradePool
                              where (grade.Dept == c.DeptCode) && (grade.Course == c.CourseNum.ToString()) &&
-                             (grade.LetterGrade.CompareTo(selectedGrade) >= 0) &&
+                             (grade.LetterGrade.CompareGrade(selectedGrade) >= 0) &&
                              (grade.LetterGrade != "F")
                              select grade).Count();
 
@@ -236,7 +236,7 @@ namespace Assign3
                         int numPassed =
                             (from grade in gradePool
                              where (grade.Dept == c.DeptCode) && (grade.Course == c.CourseNum.ToString()) &&
-                             (grade.LetterGrade.CompareTo(GradeComboBox2.SelectedItem.ToString()) < 0) &&
+                             (grade.LetterGrade.CompareGrade(selectedGrade) <= 0) &&
                              (grade.LetterGrade != "F")
                              select grade).Count();
 
