@@ -75,10 +75,9 @@
             // 
             // ZidBox
             // 
-            this.ZidBox.Location = new System.Drawing.Point(142, 129);
-            this.ZidBox.Margin = new System.Windows.Forms.Padding(7);
+            this.ZidBox.Location = new System.Drawing.Point(61, 58);
             this.ZidBox.Name = "ZidBox";
-            this.ZidBox.Size = new System.Drawing.Size(228, 35);
+            this.ZidBox.Size = new System.Drawing.Size(100, 20);
             this.ZidBox.TabIndex = 14;
             // 
             // groupBox1
@@ -86,21 +85,18 @@
             this.groupBox1.Controls.Add(this.LessButton1);
             this.groupBox1.Controls.Add(this.GreaterButton1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(35, 252);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(7);
+            this.groupBox1.Location = new System.Drawing.Point(15, 113);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(7);
-            this.groupBox1.Size = new System.Drawing.Size(467, 166);
+            this.groupBox1.Size = new System.Drawing.Size(200, 74);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             // 
             // LessButton1
             // 
             this.LessButton1.AutoSize = true;
-            this.LessButton1.Location = new System.Drawing.Point(40, 32);
-            this.LessButton1.Margin = new System.Windows.Forms.Padding(7);
+            this.LessButton1.Location = new System.Drawing.Point(17, 14);
             this.LessButton1.Name = "LessButton1";
-            this.LessButton1.Size = new System.Drawing.Size(291, 33);
+            this.LessButton1.Size = new System.Drawing.Size(129, 17);
             this.LessButton1.TabIndex = 5;
             this.LessButton1.TabStop = true;
             this.LessButton1.Text = "Less Than or Equal to";
@@ -109,42 +105,39 @@
             // GreaterButton1
             // 
             this.GreaterButton1.AutoSize = true;
-            this.GreaterButton1.Location = new System.Drawing.Point(40, 95);
-            this.GreaterButton1.Margin = new System.Windows.Forms.Padding(7);
+            this.GreaterButton1.Location = new System.Drawing.Point(17, 43);
             this.GreaterButton1.Name = "GreaterButton1";
-            this.GreaterButton1.Size = new System.Drawing.Size(321, 33);
+            this.GreaterButton1.Size = new System.Drawing.Size(142, 17);
             this.GreaterButton1.TabIndex = 6;
             this.GreaterButton1.TabStop = true;
             this.GreaterButton1.Text = "Greater Than or Equal to";
             this.GreaterButton1.UseVisualStyleBackColor = true;
+            this.GreaterButton1.CheckedChanged += new System.EventHandler(this.GreaterButton1_CheckedChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(526, 333);
-            this.label5.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label5.Location = new System.Drawing.Point(225, 149);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 29);
+            this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 12;
             this.label5.Text = "Course";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(524, 248);
-            this.label4.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label4.Location = new System.Drawing.Point(225, 111);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 29);
+            this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 11;
             this.label4.Text = "Grade";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 136);
-            this.label2.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label2.Location = new System.Drawing.Point(12, 61);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 29);
+            this.label2.Size = new System.Drawing.Size(25, 13);
             this.label2.TabIndex = 10;
             this.label2.Text = "ZID";
             // 
@@ -152,19 +145,17 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(28, 67);
-            this.label1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label1.Location = new System.Drawing.Point(12, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(376, 29);
+            this.label1.Size = new System.Drawing.Size(177, 13);
             this.label1.TabIndex = 9;
             this.label1.Text = "Grade Report for One Student";
             // 
             // ResultsButton2
             // 
-            this.ResultsButton2.Location = new System.Drawing.Point(891, 347);
-            this.ResultsButton2.Margin = new System.Windows.Forms.Padding(7);
+            this.ResultsButton2.Location = new System.Drawing.Point(382, 156);
             this.ResultsButton2.Name = "ResultsButton2";
-            this.ResultsButton2.Size = new System.Drawing.Size(201, 51);
+            this.ResultsButton2.Size = new System.Drawing.Size(86, 23);
             this.ResultsButton2.TabIndex = 16;
             this.ResultsButton2.Text = "Show Results";
             this.ResultsButton2.UseVisualStyleBackColor = true;
@@ -173,66 +164,59 @@
             // GradeComboBox1
             // 
             this.GradeComboBox1.FormattingEnabled = true;
-            this.GradeComboBox1.Location = new System.Drawing.Point(529, 284);
-            this.GradeComboBox1.Margin = new System.Windows.Forms.Padding(7);
+            this.GradeComboBox1.Location = new System.Drawing.Point(227, 127);
             this.GradeComboBox1.Name = "GradeComboBox1";
-            this.GradeComboBox1.Size = new System.Drawing.Size(130, 37);
+            this.GradeComboBox1.Size = new System.Drawing.Size(58, 21);
             this.GradeComboBox1.TabIndex = 17;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(28, 482);
-            this.label3.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label3.Location = new System.Drawing.Point(12, 216);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(455, 29);
+            this.label3.Size = new System.Drawing.Size(211, 13);
             this.label3.TabIndex = 20;
             this.label3.Text = "Major Students who Failed a Course";
             // 
             // MajorComboBox
             // 
             this.MajorComboBox.FormattingEnabled = true;
-            this.MajorComboBox.Location = new System.Drawing.Point(35, 571);
-            this.MajorComboBox.Margin = new System.Windows.Forms.Padding(7);
+            this.MajorComboBox.Location = new System.Drawing.Point(15, 256);
             this.MajorComboBox.Name = "MajorComboBox";
-            this.MajorComboBox.Size = new System.Drawing.Size(272, 37);
+            this.MajorComboBox.Size = new System.Drawing.Size(119, 21);
             this.MajorComboBox.TabIndex = 22;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(346, 531);
-            this.label6.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label6.Location = new System.Drawing.Point(148, 238);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 29);
+            this.label6.Size = new System.Drawing.Size(40, 13);
             this.label6.TabIndex = 21;
             this.label6.Text = "Course";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(30, 531);
-            this.label7.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label7.Location = new System.Drawing.Point(13, 238);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(74, 29);
+            this.label7.Size = new System.Drawing.Size(33, 13);
             this.label7.TabIndex = 23;
             this.label7.Text = "Major";
             // 
             // CourseBox1
             // 
-            this.CourseBox1.Location = new System.Drawing.Point(346, 571);
-            this.CourseBox1.Margin = new System.Windows.Forms.Padding(7);
+            this.CourseBox1.Location = new System.Drawing.Point(148, 256);
             this.CourseBox1.Name = "CourseBox1";
-            this.CourseBox1.Size = new System.Drawing.Size(331, 35);
+            this.CourseBox1.Size = new System.Drawing.Size(144, 20);
             this.CourseBox1.TabIndex = 24;
             // 
             // ResultsButton1
             // 
-            this.ResultsButton1.Location = new System.Drawing.Point(891, 121);
-            this.ResultsButton1.Margin = new System.Windows.Forms.Padding(7);
+            this.ResultsButton1.Location = new System.Drawing.Point(382, 54);
             this.ResultsButton1.Name = "ResultsButton1";
-            this.ResultsButton1.Size = new System.Drawing.Size(201, 51);
+            this.ResultsButton1.Size = new System.Drawing.Size(86, 23);
             this.ResultsButton1.TabIndex = 25;
             this.ResultsButton1.Text = "Show Results";
             this.ResultsButton1.UseVisualStyleBackColor = true;
@@ -240,10 +224,9 @@
             // 
             // ResultsButton3
             // 
-            this.ResultsButton3.Location = new System.Drawing.Point(891, 563);
-            this.ResultsButton3.Margin = new System.Windows.Forms.Padding(7);
+            this.ResultsButton3.Location = new System.Drawing.Point(382, 252);
             this.ResultsButton3.Name = "ResultsButton3";
-            this.ResultsButton3.Size = new System.Drawing.Size(201, 51);
+            this.ResultsButton3.Size = new System.Drawing.Size(86, 23);
             this.ResultsButton3.TabIndex = 26;
             this.ResultsButton3.Text = "Show Results";
             this.ResultsButton3.UseVisualStyleBackColor = true;
@@ -253,29 +236,26 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(30, 674);
-            this.label8.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label8.Location = new System.Drawing.Point(13, 302);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(359, 29);
+            this.label8.Size = new System.Drawing.Size(167, 13);
             this.label8.TabIndex = 27;
             this.label8.Text = "Grade report for One Course";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(28, 723);
-            this.label9.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label9.Location = new System.Drawing.Point(12, 324);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(91, 29);
+            this.label9.Size = new System.Drawing.Size(40, 13);
             this.label9.TabIndex = 28;
             this.label9.Text = "Course";
             // 
             // ResultsButton4
             // 
-            this.ResultsButton4.Location = new System.Drawing.Point(891, 701);
-            this.ResultsButton4.Margin = new System.Windows.Forms.Padding(7);
+            this.ResultsButton4.Location = new System.Drawing.Point(382, 314);
             this.ResultsButton4.Name = "ResultsButton4";
-            this.ResultsButton4.Size = new System.Drawing.Size(201, 51);
+            this.ResultsButton4.Size = new System.Drawing.Size(86, 23);
             this.ResultsButton4.TabIndex = 30;
             this.ResultsButton4.Text = "Show Results";
             this.ResultsButton4.UseVisualStyleBackColor = true;
@@ -283,40 +263,35 @@
             // 
             // CourseBox2
             // 
-            this.CourseBox2.Location = new System.Drawing.Point(135, 723);
-            this.CourseBox2.Margin = new System.Windows.Forms.Padding(7);
+            this.CourseBox2.Location = new System.Drawing.Point(58, 324);
             this.CourseBox2.Name = "CourseBox2";
-            this.CourseBox2.Size = new System.Drawing.Size(331, 35);
+            this.CourseBox2.Size = new System.Drawing.Size(144, 20);
             this.CourseBox2.TabIndex = 29;
             // 
             // GradeComboBox2
             // 
             this.GradeComboBox2.FormattingEnabled = true;
-            this.GradeComboBox2.Location = new System.Drawing.Point(531, 1232);
-            this.GradeComboBox2.Margin = new System.Windows.Forms.Padding(7);
+            this.GradeComboBox2.Location = new System.Drawing.Point(228, 552);
             this.GradeComboBox2.Name = "GradeComboBox2";
-            this.GradeComboBox2.Size = new System.Drawing.Size(135, 37);
+            this.GradeComboBox2.Size = new System.Drawing.Size(60, 21);
             this.GradeComboBox2.TabIndex = 33;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.LessButton2);
             this.groupBox2.Controls.Add(this.GreaterButton2);
-            this.groupBox2.Location = new System.Drawing.Point(28, 884);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(7);
+            this.groupBox2.Location = new System.Drawing.Point(12, 396);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(7);
-            this.groupBox2.Size = new System.Drawing.Size(467, 173);
+            this.groupBox2.Size = new System.Drawing.Size(200, 78);
             this.groupBox2.TabIndex = 32;
             this.groupBox2.TabStop = false;
             // 
             // LessButton2
             // 
             this.LessButton2.AutoSize = true;
-            this.LessButton2.Location = new System.Drawing.Point(40, 33);
-            this.LessButton2.Margin = new System.Windows.Forms.Padding(7);
+            this.LessButton2.Location = new System.Drawing.Point(17, 15);
             this.LessButton2.Name = "LessButton2";
-            this.LessButton2.Size = new System.Drawing.Size(278, 33);
+            this.LessButton2.Size = new System.Drawing.Size(129, 17);
             this.LessButton2.TabIndex = 5;
             this.LessButton2.TabStop = true;
             this.LessButton2.Text = "Less Than or Equal to";
@@ -325,10 +300,9 @@
             // GreaterButton2
             // 
             this.GreaterButton2.AutoSize = true;
-            this.GreaterButton2.Location = new System.Drawing.Point(40, 98);
-            this.GreaterButton2.Margin = new System.Windows.Forms.Padding(7);
+            this.GreaterButton2.Location = new System.Drawing.Point(17, 44);
             this.GreaterButton2.Name = "GreaterButton2";
-            this.GreaterButton2.Size = new System.Drawing.Size(308, 33);
+            this.GreaterButton2.Size = new System.Drawing.Size(142, 17);
             this.GreaterButton2.TabIndex = 6;
             this.GreaterButton2.TabStop = true;
             this.GreaterButton2.Text = "Greater Than or Equal to";
@@ -338,20 +312,18 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(30, 848);
-            this.label12.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label12.Location = new System.Drawing.Point(13, 380);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(328, 29);
+            this.label12.Size = new System.Drawing.Size(153, 13);
             this.label12.TabIndex = 35;
             this.label12.Text = "Fail Report for all courses";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(526, 1196);
-            this.label10.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label10.Location = new System.Drawing.Point(225, 536);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(80, 29);
+            this.label10.Size = new System.Drawing.Size(36, 13);
             this.label10.TabIndex = 31;
             this.label10.Text = "Grade";
             // 
@@ -359,10 +331,9 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(28, 216);
-            this.label11.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label11.Location = new System.Drawing.Point(12, 97);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(409, 29);
+            this.label11.Size = new System.Drawing.Size(190, 13);
             this.label11.TabIndex = 34;
             this.label11.Text = "Grade Threshold for One Course";
             // 
@@ -370,10 +341,9 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(30, 1081);
-            this.label13.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label13.Location = new System.Drawing.Point(13, 485);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(344, 29);
+            this.label13.Size = new System.Drawing.Size(160, 13);
             this.label13.TabIndex = 36;
             this.label13.Text = "Pass Report for all courses";
             // 
@@ -381,21 +351,18 @@
             // 
             this.groupBox3.Controls.Add(this.LessButton3);
             this.groupBox3.Controls.Add(this.GreaterButton3);
-            this.groupBox3.Location = new System.Drawing.Point(33, 1117);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(7);
+            this.groupBox3.Location = new System.Drawing.Point(14, 501);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(7);
-            this.groupBox3.Size = new System.Drawing.Size(467, 166);
+            this.groupBox3.Size = new System.Drawing.Size(200, 74);
             this.groupBox3.TabIndex = 37;
             this.groupBox3.TabStop = false;
             // 
             // LessButton3
             // 
             this.LessButton3.AutoSize = true;
-            this.LessButton3.Location = new System.Drawing.Point(35, 42);
-            this.LessButton3.Margin = new System.Windows.Forms.Padding(7);
+            this.LessButton3.Location = new System.Drawing.Point(15, 19);
             this.LessButton3.Name = "LessButton3";
-            this.LessButton3.Size = new System.Drawing.Size(278, 33);
+            this.LessButton3.Size = new System.Drawing.Size(129, 17);
             this.LessButton3.TabIndex = 5;
             this.LessButton3.TabStop = true;
             this.LessButton3.Text = "Less Than or Equal to";
@@ -404,10 +371,9 @@
             // GreaterButton3
             // 
             this.GreaterButton3.AutoSize = true;
-            this.GreaterButton3.Location = new System.Drawing.Point(35, 100);
-            this.GreaterButton3.Margin = new System.Windows.Forms.Padding(7);
+            this.GreaterButton3.Location = new System.Drawing.Point(15, 45);
             this.GreaterButton3.Name = "GreaterButton3";
-            this.GreaterButton3.Size = new System.Drawing.Size(308, 33);
+            this.GreaterButton3.Size = new System.Drawing.Size(142, 17);
             this.GreaterButton3.TabIndex = 6;
             this.GreaterButton3.TabStop = true;
             this.GreaterButton3.Text = "Greater Than or Equal to";
@@ -415,10 +381,9 @@
             // 
             // ResultsButton6
             // 
-            this.ResultsButton6.Location = new System.Drawing.Point(891, 1232);
-            this.ResultsButton6.Margin = new System.Windows.Forms.Padding(7);
+            this.ResultsButton6.Location = new System.Drawing.Point(382, 552);
             this.ResultsButton6.Name = "ResultsButton6";
-            this.ResultsButton6.Size = new System.Drawing.Size(201, 51);
+            this.ResultsButton6.Size = new System.Drawing.Size(86, 23);
             this.ResultsButton6.TabIndex = 38;
             this.ResultsButton6.Text = "Show Results";
             this.ResultsButton6.UseVisualStyleBackColor = true;
@@ -426,10 +391,9 @@
             // 
             // ResultsButton5
             // 
-            this.ResultsButton5.Location = new System.Drawing.Point(891, 988);
-            this.ResultsButton5.Margin = new System.Windows.Forms.Padding(7);
+            this.ResultsButton5.Location = new System.Drawing.Point(382, 443);
             this.ResultsButton5.Name = "ResultsButton5";
-            this.ResultsButton5.Size = new System.Drawing.Size(201, 51);
+            this.ResultsButton5.Size = new System.Drawing.Size(86, 23);
             this.ResultsButton5.TabIndex = 39;
             this.ResultsButton5.Text = "Show Results";
             this.ResultsButton5.UseVisualStyleBackColor = true;
@@ -437,27 +401,25 @@
             // 
             // PercentageBox
             // 
-            this.PercentageBox.Location = new System.Drawing.Point(531, 997);
-            this.PercentageBox.Margin = new System.Windows.Forms.Padding(7);
+            this.PercentageBox.Location = new System.Drawing.Point(228, 447);
             this.PercentageBox.Name = "PercentageBox";
-            this.PercentageBox.Size = new System.Drawing.Size(91, 35);
+            this.PercentageBox.Size = new System.Drawing.Size(39, 20);
             this.PercentageBox.TabIndex = 40;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(526, 961);
-            this.label14.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label14.Location = new System.Drawing.Point(225, 431);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(137, 29);
+            this.label14.Size = new System.Drawing.Size(62, 13);
             this.label14.TabIndex = 41;
             this.label14.Text = "Percentage";
             // 
             // MainOutputBox
             // 
-            this.MainOutputBox.Location = new System.Drawing.Point(1150, 118);
-            this.MainOutputBox.Margin = new System.Windows.Forms.Padding(7);
+            this.MainOutputBox.Location = new System.Drawing.Point(493, 53);
             this.MainOutputBox.Name = "MainOutputBox";
+
             this.MainOutputBox.Size = new System.Drawing.Size(980, 1113);
             this.MainOutputBox.TabIndex = 42;
             this.MainOutputBox.Text = "";
@@ -466,26 +428,24 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(1428, 71);
-            this.label15.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label15.Location = new System.Drawing.Point(612, 32);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(258, 40);
+            this.label15.Size = new System.Drawing.Size(122, 20);
             this.label15.TabIndex = 43;
             this.label15.Text = "Query Results";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(529, 363);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(7);
+            this.textBox1.Location = new System.Drawing.Point(227, 163);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(214, 35);
+            this.textBox1.Size = new System.Drawing.Size(94, 20);
             this.textBox1.TabIndex = 44;
             // 
             // GradeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2207, 1327);
+            this.ClientSize = new System.Drawing.Size(855, 595);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label15);
@@ -519,7 +479,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(7);
             this.Name = "GradeForm";
             this.Text = "NIU Academic Performance Query System";
             this.groupBox1.ResumeLayout(false);
