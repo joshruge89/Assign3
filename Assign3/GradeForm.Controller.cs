@@ -253,7 +253,24 @@ namespace Assign3
                 filteredStudentPool.Add(s);
             }
 
+            var selection2 =
+                from s in filteredStudentPool
+                from g in gradePool
+                where s.Zid.ToString() == g.Zid
 
+                select s;
+
+            StringBuilder sb = new StringBuilder("Single Course Grade Report  (" + ZidBox.Text + ")");
+            sb.AppendLine("\n-----------------------------------------------------------------------");
+
+            foreach (Student g in selection2)
+            {
+                sb.AppendLine(g.FirstName + ", " + g.LastName);
+            }
+
+            sb.AppendLine("\n\n ### END RESULTS ###");
+
+            MainOutputBox.Text = sb.ToString();
         }
 
         /*******************************************************
