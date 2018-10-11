@@ -30,10 +30,11 @@ namespace Assign3
             InitializeComponent();
             PositionAndSizeFrame();
 
-            BuildStudentPool();
-            BuildCoursePool();
+            Student.BuildStudentPool();
+            Course.BuildCoursePool();
+            Grade.BuildGradePool();
+
             BuildMajorPool();
-            BuildGradePool();
 
             PopulateGradeComboBox();
             PopulateMajorComboBox(); 

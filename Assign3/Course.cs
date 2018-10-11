@@ -12,6 +12,7 @@
  ***********************************************************/
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace Assign3
@@ -70,6 +71,56 @@ namespace Assign3
                 result = this.courseNum.CompareTo(tempCN);
             return result;
         }
+
+        /*******************************************************
+ * BuildCoursePool method
+ *
+ * Arguments: None
+ * Return Type: void
+ * Use Case: Builds the static coursePool variable
+ ******************************************************/
+        public static void BuildCoursePool()
+        {
+            String buffer,
+                filepath = "..\\..\\courses.txt";
+
+            // Open courses.txt file
+            using (StreamReader inFile = new StreamReader(filepath))
+            {
+                // Get first line of input, priming
+                buffer = inFile.ReadLine();
+
+                // Loop through file
+                while (buffer != null)
+                {
+                    // Split current line
+                    String[] argList = buffer.Split(',');
+
+                    // Parse cNum from string to uint
+                    uint crsNum;
+                    UInt32.TryParse(argList[1], out crsNum);
+
+                    // Parse crdHours from string to ushort
+                    ushort crdHours;
+                    UInt16.TryParse(argList[3], out crdHours);
+
+                    // Parse newCapp from string to ushort
+                    ushort newCapp;
+                    UInt16.TryParse(argList[4], out newCapp);
+
+                    // Create a new Course object
+                    Course newCourse = new Course(argList[0], crsNum, argList[2], crdHours, newCapp);
+
+                    // Add the new course to the course pool
+                    GradeForm.coursePool.Add(newCourse);
+
+                    // Read next line of input
+                    buffer = inFile.ReadLine();
+                } // end while loop
+            } // end using
+
+        } // end BuildCoursePool method
+
         /*******************************************************
         * Course.printRoster method
         * 

@@ -11,6 +11,7 @@
  *              functionality to the user via a form..      *
  ***********************************************************/
 using System;
+using System.IO;
 using System.Text;
 
 namespace Assign3
@@ -150,6 +151,48 @@ namespace Assign3
 
             return -99;
         }
+
+        public static void BuildStudentPool()
+        {
+            String buffer,
+                filepath = "..\\..\\students.txt";
+
+            // Open students.txt file
+            using (StreamReader inFile = new StreamReader(filepath))
+            {
+                // Get first line of input
+                buffer = inFile.ReadLine();
+
+                // Loop through file
+                while (buffer != null)
+                {
+                    // Split current line
+                    String[] argList = buffer.Split(',');
+
+                    // Parse zid from string to uint
+                    uint newZid;
+                    UInt32.TryParse(argList[0], out newZid);
+
+                    // Parse year from string to int
+                    int newYear;
+                    Int32.TryParse(argList[4], out newYear);
+
+                    // Parse gpa from string to float
+                    float newGpa;
+                    float.TryParse(argList[5], out newGpa);
+
+                    // Create a new student object
+                    Student newStudent = new Student(newZid, argList[2], argList[1], argList[3], newYear, newGpa);
+
+                    // Add the new student to the student pool
+                    GradeForm.studentPool.Add(newStudent);
+
+                    // Read next line of input
+                    buffer = inFile.ReadLine();
+                } // end while loop
+            } // end using inFile
+
+        } // end BuildStudentPool method
 
         /*******************************************************
         * Student.Enroll method
