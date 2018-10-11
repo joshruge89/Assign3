@@ -176,7 +176,7 @@ namespace Assign3
                 {
                     var studmatches =
                     from grade in gradePool
-                    where ((grade.LetterGrade.CompareGrade(selectedGrade)) <= 0)
+                    where ((grade.LetterGrade.CompareGrade(selectedGrade)) >= 0)
                     && (grade.Dept == argList[0])
                     && (grade.Course == argList[1])
                     select grade;
@@ -206,7 +206,7 @@ namespace Assign3
                 {
                     var studmatches =
                     from grade in gradePool
-                    where ((grade.LetterGrade.CompareGrade(selectedGrade)) >= 0)
+                    where ((grade.LetterGrade.CompareGrade(selectedGrade)) <= 0)
                     && (grade.Dept == argList[0])
                     && (grade.Course == argList[1])
                     select grade;
@@ -217,8 +217,10 @@ namespace Assign3
                     foreach (Grade g in studmatches)
                     {
                         sb.AppendLine(g.BuildGradeListing());
+                        amnt++; 
                     }
-
+                    if (amnt == 0)
+                        sb.AppendLine("\n\n No courses found, check course input for errors \nMUST BE IN format xxxx 123 or xxx 123");
                     sb.AppendLine("\n\n ### END RESULTS ###");
 
                     MainOutputBox.Text = sb.ToString();
