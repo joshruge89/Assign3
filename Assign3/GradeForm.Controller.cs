@@ -241,6 +241,19 @@ namespace Assign3
             MainOutputBox.Clear();
             MainOutputBox.Text = "Button 3";
 
+            var studentSelected =
+                from student in studentPool
+                where student.Major == MajorComboBox.Text.ToString()
+                select student;
+
+            filteredStudentPool.Clear();
+
+            foreach (Student s in studentSelected)
+            {
+                filteredStudentPool.Add(s);
+            }
+
+
         }
 
         /*******************************************************
