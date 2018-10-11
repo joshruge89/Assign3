@@ -86,12 +86,14 @@ namespace Assign3
             filteredStudentPool.Clear();
 
             StringBuilder sb = new StringBuilder("Single Student Grade Report  (" + ZidBox.Text + ")");
-            sb.AppendLine("\n--------------------------------------------------------------------------");
+            sb.AppendLine("\n-----------------------------------------------------------------------");
 
             foreach (Grade g in gradeMatches)
             {
                 sb.AppendLine(g.BuildGradeListing());
             }
+
+            sb.AppendLine("\n\n ### END RESULTS ###");
 
             MainOutputBox.Text = sb.ToString();
         }
