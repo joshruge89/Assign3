@@ -158,6 +158,7 @@ namespace Assign3
                 return; 
             }
 
+            //tests if course input is blank
             if (textBox1.Text.ToString() == "")
             {
                 passOutput.AppendLine("Error! Please enter text into Course field!");
@@ -241,6 +242,25 @@ namespace Assign3
         {
             MainOutputBox.Clear();
             MainOutputBox.Text = "Button 3";
+            StringBuilder passOutput = new StringBuilder();
+   //         bool allSelected = true; 
+
+            //Tests if Grade is inputted
+            if (MajorComboBox.SelectedIndex == -1)
+            {
+                passOutput.AppendLine("Error! Please Select a Major!");
+   //             allSelected = false;
+                MainOutputBox.Text = passOutput.ToString();
+                return;
+            }
+
+            if (CourseBox1.Text.ToString() == "")
+            {
+                passOutput.AppendLine("Error! Please enter text into Course field!");
+   //             allSelected = false;
+                MainOutputBox.Text = passOutput.ToString();
+                return;
+            }
 
             var studentSelected =
                 from student in studentPool
@@ -253,22 +273,31 @@ namespace Assign3
             {
                 filteredStudentPool.Add(s);
             }
-
+            
+            string splitString = CourseBox1.Text.ToUpper();
+            string[] argList = splitString.Split(' ');  //arglist 0 = dept, 1=course
             string tester = "F";
             var selection2 =
                 from s in filteredStudentPool
                 from g in gradePool
                 where s.Zid.ToString() == g.Zid
                 && g.LetterGrade == tester 
+                && g.Dept == argList[0]
+                && g.Course == argList[1]
                 select s;
 
-            StringBuilder sb = new StringBuilder("Single Course Grade Report  (" + ZidBox.Text + ")");
+            int amnt = 0; 
+            StringBuilder sb = new StringBuilder("Single Course Major Fail Report  (" + CourseBox1.Text + ")");
             sb.AppendLine("\n-----------------------------------------------------------------------");
 
             foreach (Student g in selection2)
             {
-                sb.AppendLine(g.FirstName + ", " + g.LastName);
+                sb.AppendLine("z" + g.Zid + " | " + argList[0] + "-" + argList[1] + " | F");
+                amnt++;
             }
+
+            if (amnt == 0)
+                sb.AppendLine("\n\n No courses found, check course input for errors \nMUST BE IN format xxxx 123 or xxx 123");
 
             sb.AppendLine("\n\n ### END RESULTS ###");
 
