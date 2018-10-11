@@ -419,7 +419,8 @@
             // 
             this.MainOutputBox.Location = new System.Drawing.Point(493, 53);
             this.MainOutputBox.Name = "MainOutputBox";
-            this.MainOutputBox.Size = new System.Drawing.Size(372, 501);
+
+            this.MainOutputBox.Size = new System.Drawing.Size(980, 1113);
             this.MainOutputBox.TabIndex = 42;
             this.MainOutputBox.Text = "";
             // 

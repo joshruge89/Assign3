@@ -75,7 +75,6 @@ namespace Assign3
         private void ResultsButton1_Click(object sender, EventArgs e)
         {
             MainOutputBox.Clear();
-            MainOutputBox.Text = "Button 1";
 
             var gradeMatches =
                 from grade in gradePool
@@ -187,8 +186,74 @@ namespace Assign3
         private void ResultsButton6_Click(object sender, EventArgs e)
         {
             MainOutputBox.Clear();
-            MainOutputBox.Text = "Button 6";
-        }
+            StringBuilder passOutput = new StringBuilder();
+            bool bothSelected = true;
+
+            if (GradeComboBox2.SelectedIndex == -1)
+            {
+                passOutput.AppendLine("Error! Please Select a Grade.");
+                bothSelected = false;
+            }
+
+            if (!LessButton3.Checked && !GreaterButton3.Checked)
+            {
+                passOutput.AppendLine("Error! Please Select Less Than or Greater Than.");
+                bothSelected = false;
+            }
+ 
+            if (bothSelected == true)
+            {
+                string selectedGrade = GradeComboBox2.SelectedItem.ToString();
+
+                passOutput.AppendLine("Pass Percentage Report for Classes.");
+                passOutput.AppendLine("-----------------------------------------------------------");
+                foreach (Course c in coursePool)
+                {
+                    int numEnrolled =
+                      (from grade in gradePool
+                       where (grade.Dept == c.DeptCode) && (grade.Course == c.CourseNum.ToString())
+                       select grade).Count();
+
+                    if (LessButton3.Checked)
+                    {
+                        int numPassed =
+                            (from grade in gradePool
+                             where (grade.Dept == c.DeptCode) && (grade.Course == c.CourseNum.ToString()) &&
+                             (grade.LetterGrade.CompareTo(selectedGrade) >= 0) &&
+                             (grade.LetterGrade != "F")
+                             select grade).Count();
+
+                        double passPercentage = (numPassed * 1.0) / numEnrolled;
+
+                        passOutput.Append("Out of " + numEnrolled);
+                        passOutput.Append(" enrolled in " + c.DeptCode + "-" + c.CourseNum + ", ");
+                        passOutput.Append(numPassed + " passed at or below this threshold (");
+                        passOutput.Append(String.Format("{0:0.00%}", passPercentage));
+                        passOutput.AppendLine("%)");
+                    } else
+                    {
+
+                        int numPassed =
+                            (from grade in gradePool
+                             where (grade.Dept == c.DeptCode) && (grade.Course == c.CourseNum.ToString()) &&
+                             (grade.LetterGrade.CompareTo(GradeComboBox2.SelectedItem.ToString()) < 0) &&
+                             (grade.LetterGrade != "F")
+                             select grade).Count();
+
+                        double passPercentage = (numPassed * 1.0) / numEnrolled;
+
+                        passOutput.Append("Out of " + numEnrolled);
+                        passOutput.Append(" enrolled in " + c.DeptCode + "-" + c.CourseNum + ", ");
+                        passOutput.Append(numPassed + " passed at or above this threshold (");
+                        passOutput.Append(String.Format("{0:0.00%}", passPercentage));
+                        passOutput.AppendLine("%)");
+                    }
+
+                }
+            }
+
+            MainOutputBox.Text = passOutput.ToString();
+         }
 
         private void GreaterButton1_CheckedChanged(object sender, EventArgs e)
         {
