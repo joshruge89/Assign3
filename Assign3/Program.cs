@@ -24,20 +24,18 @@ namespace Assign3
     {
         public static int CompareGrade(this string grade1, string grade2)
         {
+          int weight1, weight2;
 
-            if (grade1[0] < grade2[0]) return -1;
-            if (grade1[0] > grade2[0]) return 1;
+          weight1 = Grade.findGradeWeight(grade1);
+          weight2 = Grade.findGradeWeight(grade2);
 
-            if (grade1.Length > grade2.Length && grade1[1] == '+') return -1;
-            if (grade1.Length > grade2.Length && grade1[1] == '-') return 1;
-
-            if (grade1.Length < grade2.Length && grade2[1] == '+') return 1;
-            if (grade1.Length < grade2.Length && grade2[1] == '-') return -1;
-
-            if (grade1.Length > 1 && grade1[1] == '+' && grade2[1] != '+') return -1;
-
-            return grade1.CompareTo(grade2);
-           
+          if (weight1 > weight2) {
+            return -1;
+          } else if (weight1 < weight2) {
+            return 1;
+          } else {
+            return 0;
+          }
         }
     }
 }
