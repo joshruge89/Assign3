@@ -241,6 +241,37 @@ namespace Assign3
             MainOutputBox.Clear();
             MainOutputBox.Text = "Button 3";
 
+            var studentSelected =
+                from student in studentPool
+                where student.Major == MajorComboBox.Text.ToString()
+                select student;
+
+            filteredStudentPool.Clear();
+
+            foreach (Student s in studentSelected)
+            {
+                filteredStudentPool.Add(s);
+            }
+
+            string tester = "F";
+            var selection2 =
+                from s in filteredStudentPool
+                from g in gradePool
+                where s.Zid.ToString() == g.Zid
+                && g.LetterGrade == tester 
+                select s;
+
+            StringBuilder sb = new StringBuilder("Single Course Grade Report  (" + ZidBox.Text + ")");
+            sb.AppendLine("\n-----------------------------------------------------------------------");
+
+            foreach (Student g in selection2)
+            {
+                sb.AppendLine(g.FirstName + ", " + g.LastName);
+            }
+
+            sb.AppendLine("\n\n ### END RESULTS ###");
+
+            MainOutputBox.Text = sb.ToString();
         }
 
         /*******************************************************
