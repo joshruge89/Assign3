@@ -20,12 +20,21 @@ namespace Assign3
  
         public Grade(string newZid, string newDept, string newCourse, string newGrade)
         {
+            Console.WriteLine(newCourse);
+            Console.WriteLine(newDept);
+
             Zid = newZid;
-            Dept = newCourse;
+            Dept = newDept;
             Course = newCourse;
             LetterGrade = newGrade;
         }
 
-
+        public string BuildGradeListing()
+        {
+            StringBuilder sb = new StringBuilder(Zid + " | ");
+            sb.Append(Dept + "-" + Course);
+            sb.Append(" | " + LetterGrade);
+            return sb.ToString();
+        }
     }
 }
