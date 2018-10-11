@@ -148,20 +148,42 @@ namespace Assign3
                        where (grade.Dept == c.DeptCode) && (grade.Course == c.CourseNum.ToString())
                        select grade).Count();
 
-                    int numPassed =
-                        (from grade in gradePool
-                         where (grade.Dept == c.DeptCode) && (grade.Course == c.CourseNum.ToString()) &&
-                         (grade.LetterGrade.CompareTo(GradeComboBox2.SelectedItem.ToString()) >= 0) &&
-                         (grade.LetterGrade != "F")
-                         select grade).Count();
+                    if (LessButton3.Checked)
+                    {
 
-                    double passPercentage = (numPassed * 1.0) / numEnrolled;
+                        int numPassed =
+                            (from grade in gradePool
+                             where (grade.Dept == c.DeptCode) && (grade.Course == c.CourseNum.ToString()) &&
+                             (grade.LetterGrade.CompareTo(GradeComboBox2.SelectedItem.ToString()) >= 0) &&
+                             (grade.LetterGrade != "F")
+                             select grade).Count();
 
-                    passOutput.Append("Out of " + numEnrolled);
-                    passOutput.Append(" enrolled in " + c.DeptCode + "-" + c.CourseNum + ", ");
-                    passOutput.Append(numPassed + " passed at or below this threshold (");
-                    passOutput.Append(String.Format("{0:0.00%}", passPercentage));
-                    passOutput.AppendLine("%)");
+                        double passPercentage = (numPassed * 1.0) / numEnrolled;
+
+                        passOutput.Append("Out of " + numEnrolled);
+                        passOutput.Append(" enrolled in " + c.DeptCode + "-" + c.CourseNum + ", ");
+                        passOutput.Append(numPassed + " passed at or below this threshold (");
+                        passOutput.Append(String.Format("{0:0.00%}", passPercentage));
+                        passOutput.AppendLine("%)");
+                    } else
+                    {
+
+                        int numPassed =
+                            (from grade in gradePool
+                             where (grade.Dept == c.DeptCode) && (grade.Course == c.CourseNum.ToString()) &&
+                             (grade.LetterGrade.CompareTo(GradeComboBox2.SelectedItem.ToString()) < 0) &&
+                             (grade.LetterGrade != "F")
+                             select grade).Count();
+
+                        double passPercentage = (numPassed * 1.0) / numEnrolled;
+
+                        passOutput.Append("Out of " + numEnrolled);
+                        passOutput.Append(" enrolled in " + c.DeptCode + "-" + c.CourseNum + ", ");
+                        passOutput.Append(numPassed + " passed at or above this threshold (");
+                        passOutput.Append(String.Format("{0:0.00%}", passPercentage));
+                        passOutput.AppendLine("%)");
+                    }
+
                 }
             }
 
