@@ -102,19 +102,81 @@ namespace Assign3
         {
             MainOutputBox.Clear();
             MainOutputBox.Text = "Button 2";
+
+            if (check1)
+            {
+                MainOutputBox.Text = "Great!";
+      //          var 
+            }
+
+            else 
+            {
+                MainOutputBox.Text = "Less!";
+
+                string splitString = textBox1.Text;
+                string[] argList = splitString.Split(' ');
+
+                var studmatches =
+                    from grade in gradePool
+                    where (grade.LetterGrade.CompareTo(GradeComboBox1.SelectedItem.ToString()) <= 0)
+                    && (grade.Dept == argList[0])
+                    && (grade.Course == argList[1])
+                    select grade;
+
+                
+                StringBuilder sb = new StringBuilder("Single Course Grade Report  (" + CourseBox2.Text + ")");
+                sb.AppendLine("\n-----------------------------------------------------------------------");
+
+                foreach (Grade g in studmatches)
+                {       
+                        sb.AppendLine(g.BuildGradeListing());
+                }
+
+                sb.AppendLine("\n\n ### END RESULTS ###");
+
+                MainOutputBox.Text = sb.ToString();
+
+            }
+
+
         }
 
         private void ResultsButton3_Click(object sender, EventArgs e)
         {
             MainOutputBox.Clear();
             MainOutputBox.Text = "Button 3";
+
         }
 
+    
         private void ResultsButton4_Click(object sender, EventArgs e)
         {
             MainOutputBox.Clear();
             MainOutputBox.Text = "Button 4";
+
+            string splitString = CourseBox2.Text;
+            String[] argList = splitString.Split(' ');
+
+            var courseMatches =
+                from grade in gradePool
+                where grade.Dept == argList[0] 
+                && grade.Course == argList[1]
+                select grade; 
+
+            filteredCoursePool.Clear();
+            StringBuilder sb = new StringBuilder("Single Course Grade Report  (" + CourseBox2.Text + ")");
+            sb.AppendLine("\n-----------------------------------------------------------------------");
+
+            foreach (Grade g in courseMatches)
+            {
+                sb.AppendLine(g.BuildGradeListing());
+            }
+
+            sb.AppendLine("\n\n ### END RESULTS ###");
+
+            MainOutputBox.Text = sb.ToString();
         }
+
 
         private void ResultsButton5_Click(object sender, EventArgs e)
         {
@@ -128,6 +190,14 @@ namespace Assign3
             MainOutputBox.Text = "Button 6";
         }
 
+        private void GreaterButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            check1 = true;
+        }
 
+        private void lessButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            check1 = false;
+        }
     }
 }

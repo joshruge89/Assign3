@@ -20,5 +20,7 @@ namespace Assign3
       public static SortedSet<string> deptPool = new SortedSet<string>();
       
       public static string[] grades = {"A+","A","A-","B+","B","B-","C++","C","C-","D+","D","D-","F" };
+
+      public bool check1 = false; 
     }
 }
