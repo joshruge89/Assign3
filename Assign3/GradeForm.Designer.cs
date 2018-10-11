@@ -458,7 +458,7 @@
             this.MainOutputBox.Location = new System.Drawing.Point(1150, 118);
             this.MainOutputBox.Margin = new System.Windows.Forms.Padding(7);
             this.MainOutputBox.Name = "MainOutputBox";
-            this.MainOutputBox.Size = new System.Drawing.Size(863, 1113);
+            this.MainOutputBox.Size = new System.Drawing.Size(980, 1113);
             this.MainOutputBox.TabIndex = 42;
             this.MainOutputBox.Text = "";
             // 

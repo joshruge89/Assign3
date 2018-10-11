@@ -129,18 +129,22 @@ namespace Assign3
 
             if (GradeComboBox2.SelectedIndex == -1)
             {
-                passOutput.AppendLine("Error! Please Select a Grade");
+                passOutput.AppendLine("Error! Please Select a Grade.");
                 bothSelected = false;
             }
 
             if (!LessButton3.Checked && !GreaterButton3.Checked)
             {
-                passOutput.AppendLine("Error! Please Select Less Than or Greater Than");
+                passOutput.AppendLine("Error! Please Select Less Than or Greater Than.");
                 bothSelected = false;
             }
  
             if (bothSelected == true)
             {
+                string selectedGrade = GradeComboBox2.SelectedItem.ToString();
+
+                passOutput.AppendLine("Pass Percentage Report for Classes.");
+                passOutput.AppendLine("-----------------------------------------------------------");
                 foreach (Course c in coursePool)
                 {
                     int numEnrolled =
@@ -150,11 +154,10 @@ namespace Assign3
 
                     if (LessButton3.Checked)
                     {
-
                         int numPassed =
                             (from grade in gradePool
                              where (grade.Dept == c.DeptCode) && (grade.Course == c.CourseNum.ToString()) &&
-                             (grade.LetterGrade.CompareTo(GradeComboBox2.SelectedItem.ToString()) >= 0) &&
+                             (grade.LetterGrade.CompareTo(selectedGrade) >= 0) &&
                              (grade.LetterGrade != "F")
                              select grade).Count();
 
