@@ -112,7 +112,6 @@
             this.GreaterButton1.TabStop = true;
             this.GreaterButton1.Text = "Greater Than or Equal to";
             this.GreaterButton1.UseVisualStyleBackColor = true;
-            this.GreaterButton1.CheckedChanged += new System.EventHandler(this.GreaterButton1_CheckedChanged);
             // 
             // label5
             // 

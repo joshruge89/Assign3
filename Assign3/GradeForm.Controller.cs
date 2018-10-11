@@ -28,10 +28,25 @@ namespace Assign3
         ******************************************************/
         public static void BuildMajorPool()
         {
-            foreach (Student s in studentPool)
+            String buffer,
+            filepath = "..\\..\\colleges.txt";
+
+            // Open students.txt file
+            using (StreamReader inFile = new StreamReader(filepath))
             {
-                majorPool.Add(s.Major);
+                // Get first line of input
+                buffer = inFile.ReadLine();
+
+                // Loop through file
+                while (buffer != null)
+                {
+                    majorPool.Add(buffer);
+                    // Read next line of input
+                    buffer = inFile.ReadLine();
+                }
+
             }
+
         } // end BuildMajorPool
 
         /*******************************************************
@@ -58,7 +73,14 @@ namespace Assign3
 
         }//end PopulateGradeComboBox
 
-
+        /*******************************************************
+        * PopulateMajorComboBox method
+        *
+        * Arguments: None
+        * Return Type: void
+        * Use Case: Changes both grade dropdowns to accept
+        * strings previously created.
+        ******************************************************/
         private void PopulateMajorComboBox()
         {
             MajorComboBox.Items.Clear();
@@ -70,8 +92,13 @@ namespace Assign3
 
         } //PopulateMajorComboBox End
 
-
-
+        /*******************************************************
+        * Button 1 click
+        *
+        * Arguments: Object Sender and EventArgs e
+        * Return Type: void
+        * Use Case: 
+        ******************************************************/
         private void ResultsButton1_Click(object sender, EventArgs e)
         {
             MainOutputBox.Clear();
@@ -97,49 +124,116 @@ namespace Assign3
             MainOutputBox.Text = sb.ToString();
         }
 
+        /*******************************************************
+        * Button 2 click
+        *
+        * Arguments: Object Sender and EventArgs e
+        * Return Type: void
+        * Use Case: 
+        ******************************************************/
         private void ResultsButton2_Click(object sender, EventArgs e)
         {
             MainOutputBox.Clear();
             MainOutputBox.Text = "Button 2";
+            bool allSelected = true; 
 
-            if (check1)
+            StringBuilder passOutput = new StringBuilder(); 
+
+            //Tests if Grade is inputted
+            if (GradeComboBox1.SelectedIndex == -1)
             {
-                MainOutputBox.Text = "Great!";
-      //          var 
+                passOutput.AppendLine("Error! Please Select a Grade.");
+                allSelected = false;
+                MainOutputBox.Text = passOutput.ToString();
+                return; 
             }
 
-            else 
+            //Tests if 1 button is checked
+            if (!LessButton1.Checked && !GreaterButton1.Checked)
             {
-                MainOutputBox.Text = "Less!";
+                passOutput.AppendLine("Error! Please Select Less Than or Greater Than.");
+                allSelected = false;
+                MainOutputBox.Text = passOutput.ToString();
+                return; 
+            }
 
-                string splitString = textBox1.Text;
+            if (textBox1.Text.ToString() == "")
+            {
+                passOutput.AppendLine("Error! Please enter text into Course field!");
+                allSelected = false;
+                MainOutputBox.Text = passOutput.ToString();
+                return;
+            }
+
+            if (allSelected)
+            {
+                int amnt = 0; 
+                string selectedGrade = GradeComboBox1.SelectedItem.ToString();
+                string splitString = textBox1.Text.ToUpper();
                 string[] argList = splitString.Split(' ');
 
-                var studmatches =
+                if (LessButton1.Checked)
+                {
+                    var studmatches =
                     from grade in gradePool
-                    where (grade.LetterGrade.CompareTo(GradeComboBox1.SelectedItem.ToString()) <= 0)
+                    where ((grade.LetterGrade.CompareGrade(selectedGrade)) <= 0)
                     && (grade.Dept == argList[0])
                     && (grade.Course == argList[1])
                     select grade;
 
-                
-                StringBuilder sb = new StringBuilder("Single Course Grade Report  (" + CourseBox2.Text + ")");
-                sb.AppendLine("\n-----------------------------------------------------------------------");
+                  //  if (studmatches.Sum == 0)
 
-                foreach (Grade g in studmatches)
-                {       
+
+                    StringBuilder sb = new StringBuilder("Single Course Grade Report  (" + CourseBox2.Text.ToUpper() + ")");
+                    sb.AppendLine("\n-----------------------------------------------------------------------");
+
+                    foreach (Grade g in studmatches)
+                    {
                         sb.AppendLine(g.BuildGradeListing());
+                        amnt++; 
+
+                    }
+
+                    if (amnt == 0)
+                        sb.AppendLine("\n\n No courses found, check course input for errors \nMUST BE IN format xxxx 123 or xxx 123");
+
+                    sb.AppendLine("\n\n ### END RESULTS ###");
+
+                    MainOutputBox.Text = sb.ToString();
                 }
 
-                sb.AppendLine("\n\n ### END RESULTS ###");
+                else
+                {
+                    var studmatches =
+                    from grade in gradePool
+                    where ((grade.LetterGrade.CompareGrade(selectedGrade)) >= 0)
+                    && (grade.Dept == argList[0])
+                    && (grade.Course == argList[1])
+                    select grade;
 
-                MainOutputBox.Text = sb.ToString();
+                    StringBuilder sb = new StringBuilder("Single Course Grade Report  (" + CourseBox2.Text.ToUpper() + ")");
+                    sb.AppendLine("\n-----------------------------------------------------------------------");
+
+                    foreach (Grade g in studmatches)
+                    {
+                        sb.AppendLine(g.BuildGradeListing());
+                    }
+
+                    sb.AppendLine("\n\n ### END RESULTS ###");
+
+                    MainOutputBox.Text = sb.ToString();
+                }
 
             }
-
-
         }
 
+        /*******************************************************
+        * Button 3 click
+        *
+        * Arguments: Object Sender and EventArgs e
+        * Return Type: void
+        * Use Case: 
+        ******************************************************/
         private void ResultsButton3_Click(object sender, EventArgs e)
         {
             MainOutputBox.Clear();
@@ -147,13 +241,27 @@ namespace Assign3
 
         }
 
-    
+        /*******************************************************
+        * Button 4 click
+        *
+        * Arguments: Object Sender and EventArgs e
+        * Return Type: void
+        * Use Case: 
+        ******************************************************/
         private void ResultsButton4_Click(object sender, EventArgs e)
         {
             MainOutputBox.Clear();
             MainOutputBox.Text = "Button 4";
+            StringBuilder passOutput = new StringBuilder();
 
-            string splitString = CourseBox2.Text;
+            if (CourseBox1.Text.ToString() == "")
+            {
+                passOutput.AppendLine("Error! Please enter text into Course field!");
+                MainOutputBox.Text = passOutput.ToString();
+          //      return;
+            }
+
+            string splitString = CourseBox2.Text.ToUpper();
             String[] argList = splitString.Split(' ');
 
             var courseMatches =
@@ -163,19 +271,30 @@ namespace Assign3
                 select grade; 
 
             filteredCoursePool.Clear();
-            StringBuilder sb = new StringBuilder("Single Course Grade Report  (" + CourseBox2.Text + ")");
+            StringBuilder sb = new StringBuilder("Single Course Grade Report  (" + CourseBox2.Text.ToUpper() + ")");
             sb.AppendLine("\n-----------------------------------------------------------------------");
 
+            int counter = 0;
             foreach (Grade g in courseMatches)
             {
                 sb.AppendLine(g.BuildGradeListing());
+                counter++;
             }
+            if (counter == 0)
+                sb.AppendLine("\n\n No courses found, check course input for errors \nMUST BE IN format xxxx 123 or xxx 123");
 
             sb.AppendLine("\n\n ### END RESULTS ###");
 
             MainOutputBox.Text = sb.ToString();
         }
 
+        /*******************************************************
+        * Button 5 click
+        *
+        * Arguments: Object Sender and EventArgs e
+        * Return Type: void
+        * Use Case: 
+        ******************************************************/
 
         private void ResultsButton5_Click(object sender, EventArgs e)
         {
@@ -183,6 +302,13 @@ namespace Assign3
             MainOutputBox.Text = "Button 5";
         }
 
+        /*******************************************************
+        * Button 6 click
+        *
+        * Arguments: Object Sender and EventArgs e
+        * Return Type: void
+        * Use Case: 
+        ******************************************************/
         private void ResultsButton6_Click(object sender, EventArgs e)
         {
             MainOutputBox.Clear();
@@ -254,15 +380,5 @@ namespace Assign3
 
             MainOutputBox.Text = passOutput.ToString();
          }
-
-        private void GreaterButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            check1 = true;
-        }
-
-        private void lessButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            check1 = false;
-        }
     }
 }
