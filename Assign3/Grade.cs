@@ -14,16 +14,31 @@ namespace Assign3
         private string course;
         private string letterGrade;
 
-        public string Zid { get; set; }
-        public string Dept { get; set; }
-        public string Course { get; set; }
-        public string LetterGrade { get; set; }
+        public string Zid
+        {
+            get => zid;
+            set => value = zid;
+        }
+
+        public string Dept
+        {
+            get => dept;
+            set => value = dept;
+        }
+
+        public string Course
+        {
+            get => course;
+            set => value = course;
+        }
+
+        public string LetterGrade {
+            get => letterGrade;
+            set => value = letterGrade;
+        }
  
         public Grade(string newZid, string newDept, string newCourse, string newGrade)
         {
-            Console.WriteLine(newCourse);
-            Console.WriteLine(newDept);
-
             Zid = newZid;
             Dept = newDept;
             Course = newCourse;
@@ -31,12 +46,12 @@ namespace Assign3
         }
 
         /*******************************************************
-* BuildCoursePool method
-*
-* Arguments: None
-* Return Type: void
-* Use Case: Builds the static coursePool variable
-******************************************************/
+        * BuildCoursePool method
+        *
+        * Arguments: None
+        * Return Type: void
+        * Use Case: Builds the static coursePool variable
+        ******************************************************/
         public static void BuildGradePool()
         {
             String buffer,

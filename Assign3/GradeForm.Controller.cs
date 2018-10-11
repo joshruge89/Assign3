@@ -75,7 +75,6 @@ namespace Assign3
         private void ResultsButton1_Click(object sender, EventArgs e)
         {
             MainOutputBox.Clear();
-            MainOutputBox.Text = "Button 1";
 
             var gradeMatches =
                 from grade in gradePool
