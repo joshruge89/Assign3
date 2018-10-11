@@ -19,7 +19,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using System.Linq; 
 using System.Windows.Forms;
 
 namespace Assign3
@@ -34,11 +33,10 @@ namespace Assign3
             BuildStudentPool();
             BuildCoursePool();
             BuildMajorPool();
+            BuildGradePool();
 
             PopulateGradeComboBox();
             PopulateMajorComboBox(); 
         }
-
-
     }
 }

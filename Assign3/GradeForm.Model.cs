@@ -14,9 +14,11 @@ namespace Assign3
       public static SortedSet<Course> coursePool = new SortedSet<Course>();
       public static SortedSet<Course> filteredCoursePool = new SortedSet<Course>();
 
+      public static List<Grade> gradePool = new List<Grade>();
+
       public static SortedSet<string> majorPool = new SortedSet<string>();
       public static SortedSet<string> deptPool = new SortedSet<string>();
-
-      public static string[] gradePool = {"A+","A","A-","B+","B","B-","C++","C","C-","D+","D","D-","F" };
+      
+      public static string[] grades = {"A+","A","A-","B+","B","B-","C++","C","C-","D+","D","D-","F" };
     }
 }

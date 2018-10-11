@@ -19,11 +19,8 @@ namespace Assign3
 
         public static void BuildStudentPool()
         {
-            Console.WriteLine("Building Student Pool");
-
             String buffer,
-                filepath = "..\\..\\students.txt"; // Windows Path
-                                                   //filepath = "./students.txt"; // Mac Path
+                filepath = "..\\..\\students.txt";
 
             // Open students.txt file
             using (StreamReader inFile = new StreamReader(filepath))
@@ -71,11 +68,8 @@ namespace Assign3
         ******************************************************/
         public static void BuildCoursePool()
         {
-            Console.WriteLine("\nBuilding Course Pool");
-
             String buffer,
-                filepath = "..\\..\\courses.txt"; // Windows path
-                                                  //filepath = "./courses.txt"; // Mac Path
+                filepath = "..\\..\\courses.txt";
 
             // Open courses.txt file
             using (StreamReader inFile = new StreamReader(filepath))
@@ -145,7 +139,7 @@ namespace Assign3
             GradeComboBox2.Items.Clear();
             GradeComboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
 
-            foreach (string grade in gradePool)
+            foreach (string grade in grades)
             {
                 GradeComboBox1.Items.Add(grade);
                 GradeComboBox2.Items.Add(grade);
@@ -164,6 +158,44 @@ namespace Assign3
             }
 
         }//PopulateMajorComboBox End
+
+
+        /*******************************************************
+       * BuildCoursePool method
+       *
+       * Arguments: None
+       * Return Type: void
+       * Use Case: Builds the static coursePool variable
+       ******************************************************/
+        public static void BuildGradePool()
+        {
+            String buffer,
+                filepath = "..\\..\\grades.txt";
+
+            // Open courses.txt file
+            using (StreamReader inFile = new StreamReader(filepath))
+            {
+                // Get first line of input, priming
+                buffer = inFile.ReadLine();
+
+                // Loop through file
+                while (buffer != null)
+                {
+                    // Split current line
+                    String[] argList = buffer.Split(',');
+
+                    // Create a new Course object
+                    Grade newGrade = new Grade(argList[0], argList[1], argList[2], argList[3]);
+
+                    // Add the new course to the course pool
+                    gradePool.Add(newGrade);
+
+                    // Read next line of input
+                    buffer = inFile.ReadLine();
+                } // end while loop
+            } // end using
+
+        } // end BuildCoursePool method
 
     }
 
