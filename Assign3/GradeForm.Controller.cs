@@ -1,3 +1,15 @@
+/************************************************************
+ *                                                          *
+ *  CSCI 473/504           Assignment 3         Fall 2018   *                                             
+ *                                                          *
+ *  Programmers: Tyler Saballus/Josh Ruge                   *
+ *                                                          *
+ *  Date Due:   Oct-11                                      *                          
+ *                                                          *
+ *  Purpose:    Student grading using two classes,          *
+ *              Students and Courses to enact basic         *
+ *              functionality to the user via a form..      *
+ ***********************************************************/
 using System;
 using System.Drawing;
 using System.IO;
@@ -186,7 +198,7 @@ namespace Assign3
                   //  if (studmatches.Sum == 0)
 
 
-                    StringBuilder sb = new StringBuilder("Single Course Grade Report  (" + CourseBox2.Text.ToUpper() + ")");
+                    StringBuilder sb = new StringBuilder("Grade Threshold Report for  (" + textBox1.Text.ToUpper() + ")");
                     sb.AppendLine("\n-----------------------------------------------------------------------");
 
                     foreach (Grade g in studmatches)
@@ -213,7 +225,7 @@ namespace Assign3
                     && (grade.Course == argList[1])
                     select grade;
 
-                    StringBuilder sb = new StringBuilder("Single Course Grade Report  (" + CourseBox2.Text.ToUpper() + ")");
+                    StringBuilder sb = new StringBuilder("Single Course Grade Report  (" + textBox1.Text.ToUpper() + ")");
                     sb.AppendLine("\n-----------------------------------------------------------------------");
 
                     foreach (Grade g in studmatches)
@@ -287,12 +299,12 @@ namespace Assign3
                 select s;
 
             int amnt = 0; 
-            StringBuilder sb = new StringBuilder("Single Course Major Fail Report  (" + CourseBox1.Text + ")");
+            StringBuilder sb = new StringBuilder("Fail Report of Majors  (" + MajorComboBox.Text + ") in " + CourseBox1.Text.ToUpper());
             sb.AppendLine("\n-----------------------------------------------------------------------");
 
             foreach (Student g in selection2)
             {
-                sb.AppendLine("z" + g.Zid + " | " + argList[0] + "-" + argList[1] + " | F");
+                sb.AppendLine("z" + g.Zid + "  |  " + argList[0] + "-" + argList[1] + "  |  F");
                 amnt++;
             }
 

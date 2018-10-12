@@ -1,3 +1,15 @@
+/************************************************************
+ *                                                          *
+ *  CSCI 473/504           Assignment 3         Fall 2018   *                                             
+ *                                                          *
+ *  Programmers: Tyler Saballus/Josh Ruge                   *
+ *                                                          *
+ *  Date Due:   Oct-11                                      *                          
+ *                                                          *
+ *  Purpose:    Student grading using two classes,          *
+ *              Students and Courses to enact basic         *
+ *              functionality to the user via a form..      *
+ ***********************************************************/
 using System;
 using System.Collections.Generic;
 using System.Drawing;
