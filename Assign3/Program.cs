@@ -10,10 +10,8 @@
  *              Students and Courses to enact basic         *
  *              functionality to the user via a form..      *
  ***********************************************************/
+
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Assign3
@@ -32,14 +30,25 @@ namespace Assign3
         }
     }
 
+
+
     public static class StringExtensions
     {
+        /*******************************************************
+        * CompareGrade method
+        *
+        * Arguments: (2)
+        * 1. grade1 - the grade that calls the method
+        * 2. grade2 - the other grade to be compared to
+        * Return Type: int - an integer to indicate comparison result
+        * Use Case: Compares two grades and determines less, greater, or equal
+        ******************************************************/
         public static int CompareGrade(this string grade1, string grade2)
         {
           int weight1, weight2;
 
-          weight1 = Grade.findGradeWeight(grade1);
-          weight2 = Grade.findGradeWeight(grade2);
+          weight1 = Grade.FindGradeWeight(grade1);
+          weight2 = Grade.FindGradeWeight(grade2);
 
           if (weight1 > weight2) {
             return -1;

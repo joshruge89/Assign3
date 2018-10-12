@@ -10,46 +10,29 @@
  *              Students and Courses to enact basic         *
  *              functionality to the user via a form..      *
  ***********************************************************/
+
+
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Assign3
 {
     public class Grade
     {
-        private string zid;
-        private string dept;
-        private string course;
-        private string letterGrade;
+        public string Zid { get; set; }
 
-        public string Zid
-        {
-            get;// => zid;
-            set;// => value = zid;
-        }
+        public string Dept { get; set; }
 
-        public string Dept
-        {
-            get;// => dept;
-            set;// => value = dept;
-        }
+        public string Course { get; set; }
 
-        public string Course
-        {
-            get;// => course;
-            set;// => value = course;
-        }
+        public string LetterGrade { get; set; }
 
-        public string LetterGrade
-        {
-            get;// => letterGrade;
-            set;// => value = letterGrade;
-        }
-
+        /*******************************************************
+        * Grade Constructor
+        *
+        * Arguments: (4): All strings to represent zid, dept, course, and grade
+        ******************************************************/
         public Grade(string newZid, string newDept, string newCourse, string newGrade)
         {
             Zid = newZid;
@@ -59,11 +42,11 @@ namespace Assign3
         }
 
         /*******************************************************
-        * BuildCoursePool method
+        * BuildGradePool method
         *
         * Arguments: None
         * Return Type: void
-        * Use Case: Builds the static coursePool variable
+        * Use Case: Builds the static gradePool variable
         ******************************************************/
         public static void BuildGradePool()
         {
@@ -96,6 +79,15 @@ namespace Assign3
 
         } // end BuildCoursePool method
 
+
+
+        /*******************************************************
+        * BuildGradeListing method
+        *
+        * Arguments: None
+        * Return Type: void
+        * Use Case: Builds a gradelisting for the current grade object
+        ******************************************************/
         public string BuildGradeListing()
         {
             StringBuilder sb = new StringBuilder("z" + Zid + "   |   ");
@@ -104,7 +96,15 @@ namespace Assign3
             return sb.ToString();
         }
 
-        public static int findGradeWeight(string letterGrade)
+
+        /*******************************************************
+        * BuildGradeListing method
+        *
+        * Arguments: (1): letterGrade - A string to be assigned a weight
+        * Return Type: void
+        * Use Case: Takes letters grades and weights them
+        ******************************************************/
+        public static int FindGradeWeight(string letterGrade)
         {
             switch (letterGrade) {
                 case "A+":
@@ -136,7 +136,7 @@ namespace Assign3
                 default:
                     return 0;
 
-            }
-        }
+            } // end switch
+        } // end GradeForm.FindGradeWeight Method
     }
 }
