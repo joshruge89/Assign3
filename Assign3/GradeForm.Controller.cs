@@ -142,7 +142,9 @@ namespace Assign3
         *
         * Arguments: Object Sender and EventArgs e
         * Return Type: void
-        * Use Case: 
+        * Use Case: Shows all grades either greater than
+        * or less than the specified grade user input for 
+        * one course object.
         ******************************************************/
         private void ResultsButton2_Click(object sender, EventArgs e)
         {
@@ -248,7 +250,8 @@ namespace Assign3
         *
         * Arguments: Object Sender and EventArgs e
         * Return Type: void
-        * Use Case: 
+        * Use Case: Shows students who fail a course who have 
+        * have a specific major determined by user input
         ******************************************************/
         private void ResultsButton3_Click(object sender, EventArgs e)
         {
@@ -321,7 +324,8 @@ namespace Assign3
         *
         * Arguments: Object Sender and EventArgs e
         * Return Type: void
-        * Use Case: 
+        * Use Case: User input determines single course
+        * to show all students grades in that course. 
         ******************************************************/
         private void ResultsButton4_Click(object sender, EventArgs e)
         {
