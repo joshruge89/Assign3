@@ -10,8 +10,6 @@
  *              Students and Courses to enact basic         *
  *              functionality to the user via a form..      *
  ***********************************************************/
-
-using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -141,7 +139,9 @@ namespace Assign3
         *
         * Arguments: Object Sender and EventArgs e
         * Return Type: void
-        * Use Case: Displays all students' grades who passed a course beyond a threshold
+        * Use Case: Shows all grades either greater than
+        * or less than the specified grade user input for 
+        * one course object.
         ******************************************************/
         private void ResultsButton2_Click(object sender, EventArgs e)
         {
@@ -197,7 +197,7 @@ namespace Assign3
                   //  if (studmatches.Sum == 0)
 
 
-                    StringBuilder sb = new StringBuilder("Single Course Grade Report  (" + CourseBox2.Text.ToUpper() + ")");
+                    StringBuilder sb = new StringBuilder("Grade Threshold Report for  (" + textBox1.Text.ToUpper() + ")");
                     sb.AppendLine("\n-----------------------------------------------------------------------");
 
                     foreach (Grade g in studmatches)
@@ -224,7 +224,7 @@ namespace Assign3
                     && (grade.Course == argList[1])
                     select grade;
 
-                    StringBuilder sb = new StringBuilder("Single Course Grade Report  (" + CourseBox2.Text.ToUpper() + ")");
+                    StringBuilder sb = new StringBuilder("Single Course Grade Report  (" + textBox1.Text.ToUpper() + ")");
                     sb.AppendLine("\n-----------------------------------------------------------------------");
 
                     foreach (Grade g in studmatches)
@@ -247,7 +247,8 @@ namespace Assign3
         *
         * Arguments: Object Sender and EventArgs e
         * Return Type: void
-        * Use Case: Displays all students of a major who failed a particular course
+        * Use Case: Shows students who fail a course who have 
+        * have a specific major determined by user input
         ******************************************************/
         private void ResultsButton3_Click(object sender, EventArgs e)
         {
@@ -295,12 +296,12 @@ namespace Assign3
                 select s;
 
             int amnt = 0; 
-            StringBuilder sb = new StringBuilder("Single Course Major Fail Report  (" + CourseBox1.Text + ")");
+            StringBuilder sb = new StringBuilder("Fail Report of Majors  (" + MajorComboBox.Text + ") in " + CourseBox1.Text.ToUpper());
             sb.AppendLine("\n-----------------------------------------------------------------------");
 
             foreach (Student g in selection2)
             {
-                sb.AppendLine("z" + g.Zid + " | " + argList[0] + "-" + argList[1] + " | F");
+                sb.AppendLine("z" + g.Zid + "  |  " + argList[0] + "-" + argList[1] + "  |  F");
                 amnt++;
             }
 
@@ -317,7 +318,8 @@ namespace Assign3
         *
         * Arguments: Object Sender and EventArgs e
         * Return Type: void
-        * Use Case: Displays all grades for the selected course
+        * Use Case: User input determines single course
+        * to show all students grades in that course. 
         ******************************************************/
         private void ResultsButton4_Click(object sender, EventArgs e)
         {

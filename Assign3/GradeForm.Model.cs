@@ -10,7 +10,6 @@
  *              Students and Courses to enact basic         *
  *              functionality to the user via a form..      *
  ***********************************************************/
-
 using System.Collections.Generic;
 
 namespace Assign3

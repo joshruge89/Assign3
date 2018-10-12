@@ -11,6 +11,7 @@
  *              functionality to the user via a form..      *
  ***********************************************************/
 
+
 using System;
 using System.IO;
 using System.Text;
@@ -89,7 +90,7 @@ namespace Assign3
         ******************************************************/
         public string BuildGradeListing()
         {
-            StringBuilder sb = new StringBuilder(Zid + "   |   ");
+            StringBuilder sb = new StringBuilder("z" + Zid + "   |   ");
             sb.Append(Dept + "-" + Course);
             sb.Append("   |   " + LetterGrade);
             return sb.ToString();
