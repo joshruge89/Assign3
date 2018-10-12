@@ -285,6 +285,15 @@ namespace Assign3
             return sb.ToString();
         }
 
+
+
+        /*******************************************************
+        * BuildStudentListing method
+        *
+        * Arguments: None
+        * Return Type: string - A student listing
+        * Use Case: Builds a formatted version of the student object
+        ******************************************************/
         public string BuildStudentListing()
         {
             string studentListing = "z" + Zid + " -- " + LastName + ", " + FirstName;

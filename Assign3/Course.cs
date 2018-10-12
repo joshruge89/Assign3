@@ -73,12 +73,12 @@ namespace Assign3
         }
 
         /*******************************************************
- * BuildCoursePool method
- *
- * Arguments: None
- * Return Type: void
- * Use Case: Builds the static coursePool variable
- ******************************************************/
+         * BuildCoursePool method
+         *
+         * Arguments: None
+         * Return Type: void
+         * Use Case: Builds the static coursePool variable
+         ******************************************************/
         public static void BuildCoursePool()
         {
             String buffer,

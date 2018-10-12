@@ -1,3 +1,16 @@
+/************************************************************
+ *                                                          *
+ *  CSCI 473/504           Assignment 3         Fall 2018   *                                             
+ *                                                          *
+ *  Programmers: Tyler Saballus/Josh Ruge                   *
+ *                                                          *
+ *  Date Due:   Oct-11                                      *                          
+ *                                                          *
+ *  Purpose:    Student grading using two classes,          *
+ *              Students and Courses to enact basic         *
+ *              functionality to the user via a form..      *
+ ***********************************************************/
+
 using System;
 using System.Drawing;
 using System.IO;
@@ -98,7 +111,7 @@ namespace Assign3
         *
         * Arguments: Object Sender and EventArgs e
         * Return Type: void
-        * Use Case: 
+        * Use Case: Displays all grades for a selected student
         ******************************************************/
         private void ResultsButton1_Click(object sender, EventArgs e)
         {
@@ -109,8 +122,6 @@ namespace Assign3
                 where grade.Zid == ZidBox.Text
                 orderby grade.Dept
                 select grade;
-
-            filteredStudentPool.Clear();
 
             StringBuilder sb = new StringBuilder("Single Student Grade Report  (" + ZidBox.Text + ")");
             sb.AppendLine("\n-----------------------------------------------------------------------");
@@ -123,14 +134,14 @@ namespace Assign3
             sb.AppendLine("\n\n ### END RESULTS ###");
 
             MainOutputBox.Text = sb.ToString();
-        }
+        } // end GradeForm.ResultsButton1_Click method
 
         /*******************************************************
         * Button 2 click
         *
         * Arguments: Object Sender and EventArgs e
         * Return Type: void
-        * Use Case: 
+        * Use Case: Displays all students' grades who passed a course beyond a threshold
         ******************************************************/
         private void ResultsButton2_Click(object sender, EventArgs e)
         {
@@ -229,27 +240,25 @@ namespace Assign3
                 }
 
             }
-        }
+        } // end GradeForm.ResultsButton2_Click method
 
         /*******************************************************
         * Button 3 click
         *
         * Arguments: Object Sender and EventArgs e
         * Return Type: void
-        * Use Case: 
+        * Use Case: Displays all students of a major who failed a particular course
         ******************************************************/
         private void ResultsButton3_Click(object sender, EventArgs e)
         {
             MainOutputBox.Clear();
             MainOutputBox.Text = "Button 3";
             StringBuilder passOutput = new StringBuilder();
-   //         bool allSelected = true; 
 
             //Tests if Grade is inputted
             if (MajorComboBox.SelectedIndex == -1)
             {
                 passOutput.AppendLine("Error! Please Select a Major!");
-   //             allSelected = false;
                 MainOutputBox.Text = passOutput.ToString();
                 return;
             }
@@ -257,7 +266,6 @@ namespace Assign3
             if (CourseBox1.Text.ToString() == "")
             {
                 passOutput.AppendLine("Error! Please enter text into Course field!");
-   //             allSelected = false;
                 MainOutputBox.Text = passOutput.ToString();
                 return;
             }
@@ -302,14 +310,14 @@ namespace Assign3
             sb.AppendLine("\n\n ### END RESULTS ###");
 
             MainOutputBox.Text = sb.ToString();
-        }
+        } // end GradeForm.ResultsButton3_Click method
 
         /*******************************************************
         * Button 4 click
         *
         * Arguments: Object Sender and EventArgs e
         * Return Type: void
-        * Use Case: 
+        * Use Case: Displays all grades for the selected course
         ******************************************************/
         private void ResultsButton4_Click(object sender, EventArgs e)
         {
@@ -349,14 +357,14 @@ namespace Assign3
             sb.AppendLine("\n\n ### END RESULTS ###");
 
             MainOutputBox.Text = sb.ToString();
-        }
+        } // end GradeForm.ResultsButton4_Click method
 
         /*******************************************************
         * Button 5 click
         *
         * Arguments: Object Sender and EventArgs e
         * Return Type: void
-        * Use Case: 
+        * Use Case: Displays all courses where students failed beyond a threshold
         ******************************************************/
         private void ResultsButton5_Click(object sender, EventArgs e)
         {
@@ -364,6 +372,7 @@ namespace Assign3
             StringBuilder failOutput = new StringBuilder();
             bool radioSelected = true;
 
+            // Error check for radio buttons not being set
             if (!LessButton2.Checked && !GreaterButton2.Checked) {
                 failOutput.AppendLine("Error! Please Select Less Than or Greater Than.");
                 radioSelected = false;
@@ -390,9 +399,11 @@ namespace Assign3
                           (grade.LetterGrade == "F")
                           select grade).Count();
 
+                    // Calculate fail percentage for current course
                     double failPercentage = (numFailed / numEnrolled) * 100;
                     double percentageFilter = Convert.ToDouble(PercentageBox.Value);
 
+                    // Create output for less than or equal to
                     if (LessButton2.Checked && failPercentage <= percentageFilter)
                     {                        
                         failOutput.Append("Out of " + numEnrolled + " in ");
@@ -403,6 +414,7 @@ namespace Assign3
 
                         matchNotFound = false;
                     }
+                    // Create output for greater than or equal to
                     else if (GreaterButton2.Checked && failPercentage >= percentageFilter)
                     {
                         failOutput.Append("Out of " + numEnrolled + " in ");
@@ -415,6 +427,7 @@ namespace Assign3
                     }
                 }
 
+                // Create output for no matches found
                 if (matchNotFound)
                 {
                     failOutput.AppendLine("No matches were found beyond this threshold.");
@@ -433,7 +446,7 @@ namespace Assign3
         *
         * Arguments: Object Sender and EventArgs e
         * Return Type: void
-        * Use Case: 
+        * Use Case: Used to display pass rates for every course in the university
         ******************************************************/
         private void ResultsButton6_Click(object sender, EventArgs e)
         {
@@ -441,12 +454,14 @@ namespace Assign3
             StringBuilder passOutput = new StringBuilder();
             bool bothSelected = true;
 
+            // Error check for empty selection box
             if (GradeComboBox2.SelectedIndex == -1)
             {
                 passOutput.AppendLine("Error! Please Select a Grade.");
                 bothSelected = false;
             }
 
+            // Error check for unselected radio buttons
             if (!LessButton3.Checked && !GreaterButton3.Checked)
             {
                 passOutput.AppendLine("Error! Please Select Less Than or Greater Than.");
@@ -466,6 +481,7 @@ namespace Assign3
                        where (grade.Dept == c.DeptCode) && (grade.Course == c.CourseNum.ToString())
                        select grade).Count();
 
+                    // Create output for less than or equal to
                     if (LessButton3.Checked)
                     {
                         int numPassed =
@@ -481,8 +497,10 @@ namespace Assign3
                         passOutput.Append(" enrolled in " + c.DeptCode + "-" + c.CourseNum + ", ");
                         passOutput.Append(numPassed + " passed at or below this threshold (");
                         passOutput.Append(String.Format("{0:0.00%}", passPercentage));
-                        passOutput.AppendLine("%\n");
-                    } else
+                        passOutput.AppendLine(")\n");
+                    }
+                    // Create output for greater than or equal to
+                    else
                     {
 
                         int numPassed =
@@ -498,7 +516,7 @@ namespace Assign3
                         passOutput.Append(" enrolled in " + c.DeptCode + "-" + c.CourseNum + ", ");
                         passOutput.Append(numPassed + " passed at or above this threshold (");
                         passOutput.Append(String.Format("{0:0.00%}", passPercentage));
-                        passOutput.AppendLine("%)\n");
+                        passOutput.AppendLine(")\n");
                     } // end else greater than
 
                 } // end foreach course
